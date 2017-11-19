@@ -1,0 +1,1573 @@
+Start kube::util::verify_system
+Start kube::util::setup_hostname
+Start kube::util::setup_ssh
+Generating public/private rsa key pair.
+Created directory '/root/.ssh'.
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+42:94:2f:ea:bd:63:91:15:40:c8:eb:03:2d:8b:95:be root@localhost.localdomain
+The key's randomart image is:
++--[ RSA 2048]----+
+|   . o+o         |
+|    o.. .        |
+|   o ... .       |
+|  = o.. o        |
+| + = ..+S        |
+|. o + o.         |
+|   o o .         |
+|  E . +          |
+|     ..o         |
++-----------------+
+# localhost.localdomain SSH-2.0-OpenSSH_6.6.1
+# localhost.localdomain SSH-2.0-OpenSSH_6.6.1
+Start kube::util::setup_network
+Current mode:                   enforcing
+net.ipv4.ip_forward = 1
+fs.file-max = 1000000
+net.ipv4.tcp_keepalive_intvl = 1
+net.ipv4.tcp_keepalive_time = 5
+net.ipv4.tcp_keepalive_probes = 5
+Start kube::util::setup_golang
+which: no go in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/gopath/bin:/usr/local/bin:/usr/local/go/bin/)
+Start kube::util::install_golang
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.cn99.com
+ * extras: mirrors.cn99.com
+ * updates: mirrors.cn99.com
+Package git-1.8.3.1-6.el7_2.1.x86_64 already installed and latest version
+Nothing to do
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 77.8M    0   556    0     0    587      0 38:37:23 --:--:-- 38:37:23   587  1 77.8M    1  880k    0     0   570k      0  0:02:19  0:00:01  0:02:18  570k 12 77.8M   12 9840k    0     0  3889k      0  0:00:20  0:00:02  0:00:18 3889k 23 77.8M   23 17.9M    0     0  5210k      0  0:00:15  0:00:03  0:00:12 5210k 31 77.8M   31 24.3M    0     0  5497k      0  0:00:14  0:00:04  0:00:10 5496k 38 77.8M   38 30.3M    0     0  5614k      0  0:00:14  0:00:05  0:00:09 6772k 45 77.8M   45 35.6M    0     0  5597k      0  0:00:14  0:00:06  0:00:08 7153k 54 77.8M   54 42.1M    0     0  5713k      0  0:00:13  0:00:07  0:00:06 6633k 61 77.8M   61 48.2M    0     0  5784k      0  0:00:13  0:00:08  0:00:05 6189k 71 77.8M   71 55.8M    0     0  5921k      0  0:00:13  0:00:09  0:00:04 6298k 74 77.8M   74 58.1M    0     0  5653k      0  0:00:14  0:00:10  0:00:04 5697k 87 77.8M   87 68.1M    0     0  6055k      0  0:00:13  0:00:11  0:00:02 6652k 93 77.8M   93 73.0M    0     0  5970k      0  0:00:13  0:00:12  0:00:01 6358k100 77.8M  100 77.8M    0     0  6058k      0  0:00:13  0:00:13 --:--:-- 6565k
+Start kube::util::setup_openstack
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.cn99.com
+ * extras: mirrors.cn99.com
+ * updates: mirrors.cn99.com
+Resolving Dependencies
+--> Running transaction check
+---> Package centos-release-openstack-mitaka.noarch 0:1-5.el7 will be installed
+--> Processing Dependency: centos-release-qemu-ev for package: centos-release-openstack-mitaka-1-5.el7.noarch
+--> Processing Dependency: centos-release-ceph-hammer for package: centos-release-openstack-mitaka-1-5.el7.noarch
+---> Package epel-release.noarch 0:7-9 will be installed
+--> Running transaction check
+---> Package centos-release-ceph-hammer.noarch 0:1.0-5.el7.centos will be installed
+--> Processing Dependency: centos-release-storage-common for package: centos-release-ceph-hammer-1.0-5.el7.centos.noarch
+---> Package centos-release-qemu-ev.noarch 0:1.0-1.el7 will be installed
+--> Processing Dependency: centos-release-virt-common for package: centos-release-qemu-ev-1.0-1.el7.noarch
+--> Running transaction check
+---> Package centos-release-storage-common.noarch 0:1-2.el7.centos will be installed
+---> Package centos-release-virt-common.noarch 0:1-1.el7.centos will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                           Arch     Version              Repository
+                                                                           Size
+================================================================================
+Installing:
+ centos-release-openstack-mitaka   noarch   1-5.el7              extras   5.3 k
+ epel-release                      noarch   7-9                  extras    14 k
+Installing for dependencies:
+ centos-release-ceph-hammer        noarch   1.0-5.el7.centos     extras   4.5 k
+ centos-release-qemu-ev            noarch   1.0-1.el7            extras    11 k
+ centos-release-storage-common     noarch   1-2.el7.centos       extras   4.5 k
+ centos-release-virt-common        noarch   1-1.el7.centos       extras   4.5 k
+
+Transaction Summary
+================================================================================
+Install  2 Packages (+4 Dependent packages)
+
+Total download size: 44 k
+Installed size: 48 k
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              100 kB/s |  44 kB  00:00     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : centos-release-virt-common-1-1.el7.centos.noarch             1/6 
+  Installing : centos-release-qemu-ev-1.0-1.el7.noarch                      2/6 
+  Installing : centos-release-storage-common-1-2.el7.centos.noarch          3/6 
+  Installing : centos-release-ceph-hammer-1.0-5.el7.centos.noarch           4/6 
+  Installing : centos-release-openstack-mitaka-1-5.el7.noarch               5/6 
+  Installing : epel-release-7-9.noarch                                      6/6 
+  Verifying  : centos-release-storage-common-1-2.el7.centos.noarch          1/6 
+  Verifying  : centos-release-ceph-hammer-1.0-5.el7.centos.noarch           2/6 
+  Verifying  : epel-release-7-9.noarch                                      3/6 
+  Verifying  : centos-release-qemu-ev-1.0-1.el7.noarch                      4/6 
+  Verifying  : centos-release-openstack-mitaka-1-5.el7.noarch               5/6 
+  Verifying  : centos-release-virt-common-1-1.el7.centos.noarch             6/6 
+
+Installed:
+  centos-release-openstack-mitaka.noarch 0:1-5.el7   epel-release.noarch 0:7-9  
+
+Dependency Installed:
+  centos-release-ceph-hammer.noarch 0:1.0-5.el7.centos                          
+  centos-release-qemu-ev.noarch 0:1.0-1.el7                                     
+  centos-release-storage-common.noarch 0:1-2.el7.centos                         
+  centos-release-virt-common.noarch 0:1-1.el7.centos                            
+
+Complete!
+Loaded plugins: fastestmirror
+http://mirror.centos.org/centos/7/virt/x86_64/kvm-common/repodata/6221b5bc64c2cb3215348b5a9259e39af6501a68548b9c770d3b2397dcdf2b21-primary.sqlite.bz2: [Errno 14] curl#7 - "Failed to connect to 2605:9000:401:102::2: Network is unreachable"
+Trying other mirror.
+Loading mirror speeds from cached hostfile
+ * base: mirrors.cn99.com
+ * epel: mirror.premi.st
+ * extras: mirrors.cn99.com
+ * updates: mirrors.cn99.com
+Resolving Dependencies
+--> Running transaction check
+---> Package mariadb-libs.x86_64 1:5.5.52-1.el7 will be updated
+---> Package mariadb-libs.x86_64 3:10.1.20-1.el7 will be an update
+--> Processing Dependency: mariadb-common(x86-64) = 3:10.1.20-1.el7 for package: 3:mariadb-libs-10.1.20-1.el7.x86_64
+--> Running transaction check
+---> Package mariadb-common.x86_64 3:10.1.20-1.el7 will be installed
+--> Processing Dependency: /etc/my.cnf for package: 3:mariadb-common-10.1.20-1.el7.x86_64
+--> Running transaction check
+---> Package mariadb-config.x86_64 3:10.1.20-1.el7 will be installed
+---> Package mariadb-libs.x86_64 1:5.5.52-1.el7 will be updated
+---> Package mariadb-libs.x86_64 1:5.5.52-1.el7 will be updated
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package          Arch     Version              Repository                 Size
+================================================================================
+Updating:
+ mariadb-libs     x86_64   3:10.1.20-1.el7      centos-openstack-mitaka   643 k
+Installing for dependencies:
+ mariadb-common   x86_64   3:10.1.20-1.el7      centos-openstack-mitaka    63 k
+ mariadb-config   x86_64   3:10.1.20-1.el7      centos-openstack-mitaka    26 k
+
+Transaction Summary
+================================================================================
+Install             ( 2 Dependent packages)
+Upgrade  1 Package
+
+Total download size: 732 k
+Downloading packages:
+Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
+warning: /var/cache/yum/x86_64/7/centos-openstack-mitaka/packages/mariadb-config-10.1.20-1.el7.x86_64.rpm: Header V4 RSA/SHA1 Signature, key ID 764429e6: NOKEY
+Public key for mariadb-config-10.1.20-1.el7.x86_64.rpm is not installed
+--------------------------------------------------------------------------------
+Total                                               82 kB/s | 732 kB  00:08     
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Cloud
+Importing GPG key 0x764429E6:
+ Userid     : "CentOS Cloud SIG (http://wiki.centos.org/SpecialInterestGroup/Cloud) <security@centos.org>"
+ Fingerprint: 736a f511 6d9c 40e2 af6b 074b f9b9 fee7 7644 29e6
+ Package    : centos-release-openstack-mitaka-1-5.el7.noarch (@extras)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Cloud
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : 3:mariadb-config-10.1.20-1.el7.x86_64                        1/4 
+  Installing : 3:mariadb-common-10.1.20-1.el7.x86_64                        2/4 
+  Updating   : 3:mariadb-libs-10.1.20-1.el7.x86_64                          3/4 
+  Cleanup    : 1:mariadb-libs-5.5.52-1.el7.x86_64                           4/4 
+  Verifying  : 3:mariadb-libs-10.1.20-1.el7.x86_64                          1/4 
+  Verifying  : 3:mariadb-config-10.1.20-1.el7.x86_64                        2/4 
+  Verifying  : 3:mariadb-common-10.1.20-1.el7.x86_64                        3/4 
+  Verifying  : 1:mariadb-libs-5.5.52-1.el7.x86_64                           4/4 
+
+Dependency Installed:
+  mariadb-common.x86_64 3:10.1.20-1.el7  mariadb-config.x86_64 3:10.1.20-1.el7 
+
+Updated:
+  mariadb-libs.x86_64 3:10.1.20-1.el7                                           
+
+Complete!
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.cn99.com
+ * epel: ftp.jaist.ac.jp
+ * extras: mirrors.cn99.com
+ * updates: mirrors.cn99.com
+Resolving Dependencies
+--> Running transaction check
+---> Package openstack-packstack.noarch 0:8.0.2-1.el7 will be installed
+--> Processing Dependency: openstack-packstack-puppet = 8.0.2-1.el7 for package: openstack-packstack-8.0.2-1.el7.noarch
+--> Processing Dependency: openstack-puppet-modules >= 2014.2.10 for package: openstack-packstack-8.0.2-1.el7.noarch
+--> Processing Dependency: python-setuptools for package: openstack-packstack-8.0.2-1.el7.noarch
+--> Processing Dependency: python-netaddr for package: openstack-packstack-8.0.2-1.el7.noarch
+--> Processing Dependency: python-docutils for package: openstack-packstack-8.0.2-1.el7.noarch
+--> Processing Dependency: pyOpenSSL for package: openstack-packstack-8.0.2-1.el7.noarch
+--> Processing Dependency: PyYAML for package: openstack-packstack-8.0.2-1.el7.noarch
+--> Running transaction check
+---> Package PyYAML.x86_64 0:3.10-11.el7 will be installed
+--> Processing Dependency: libyaml-0.so.2()(64bit) for package: PyYAML-3.10-11.el7.x86_64
+---> Package openstack-packstack-puppet.noarch 0:8.0.2-1.el7 will be installed
+---> Package openstack-puppet-modules.noarch 1:8.1.13-1.el7 will be installed
+--> Processing Dependency: rubygem-json for package: 1:openstack-puppet-modules-8.1.13-1.el7.noarch
+---> Package pyOpenSSL.noarch 0:0.15.1-1.el7 will be installed
+--> Processing Dependency: python-cryptography for package: pyOpenSSL-0.15.1-1.el7.noarch
+---> Package python-docutils.noarch 0:0.11-0.2.20130715svn7687.el7 will be installed
+--> Processing Dependency: python-imaging for package: python-docutils-0.11-0.2.20130715svn7687.el7.noarch
+---> Package python-netaddr.noarch 0:0.7.18-1.el7 will be installed
+---> Package python2-setuptools.noarch 0:22.0.5-1.el7 will be installed
+--> Running transaction check
+---> Package libyaml.x86_64 0:0.1.4-11.el7_0 will be installed
+---> Package python2-cryptography.x86_64 0:1.3.1-3.el7 will be installed
+--> Processing Dependency: python-six >= 1.4.1 for package: python2-cryptography-1.3.1-3.el7.x86_64
+--> Processing Dependency: python-pyasn1 >= 0.1.8 for package: python2-cryptography-1.3.1-3.el7.x86_64
+--> Processing Dependency: python-idna >= 2.0 for package: python2-cryptography-1.3.1-3.el7.x86_64
+--> Processing Dependency: python-cffi >= 1.4.1 for package: python2-cryptography-1.3.1-3.el7.x86_64
+--> Processing Dependency: python-ipaddress for package: python2-cryptography-1.3.1-3.el7.x86_64
+--> Processing Dependency: python-enum34 for package: python2-cryptography-1.3.1-3.el7.x86_64
+---> Package python2-pillow.x86_64 0:4.0.0-1.el7 will be installed
+--> Processing Dependency: python2-olefile for package: python2-pillow-4.0.0-1.el7.x86_64
+--> Processing Dependency: libtiff.so.5(LIBTIFF_4.0)(64bit) for package: python2-pillow-4.0.0-1.el7.x86_64
+--> Processing Dependency: libjpeg.so.62(LIBJPEG_6.2)(64bit) for package: python2-pillow-4.0.0-1.el7.x86_64
+--> Processing Dependency: libwebp.so.4()(64bit) for package: python2-pillow-4.0.0-1.el7.x86_64
+--> Processing Dependency: libtiff.so.5()(64bit) for package: python2-pillow-4.0.0-1.el7.x86_64
+--> Processing Dependency: libopenjp2.so.7()(64bit) for package: python2-pillow-4.0.0-1.el7.x86_64
+--> Processing Dependency: liblcms2.so.2()(64bit) for package: python2-pillow-4.0.0-1.el7.x86_64
+--> Processing Dependency: libjpeg.so.62()(64bit) for package: python2-pillow-4.0.0-1.el7.x86_64
+--> Processing Dependency: libimagequant.so.0()(64bit) for package: python2-pillow-4.0.0-1.el7.x86_64
+---> Package rubygem-json.x86_64 0:1.7.7-29.el7 will be installed
+--> Processing Dependency: ruby(rubygems) >= 2.0.14.1 for package: rubygem-json-1.7.7-29.el7.x86_64
+--> Processing Dependency: ruby(release) for package: rubygem-json-1.7.7-29.el7.x86_64
+--> Processing Dependency: libruby.so.2.0()(64bit) for package: rubygem-json-1.7.7-29.el7.x86_64
+--> Running transaction check
+---> Package lcms2.x86_64 0:2.6-3.el7 will be installed
+---> Package libimagequant.x86_64 0:2.8.2-2.el7 will be installed
+---> Package libjpeg-turbo.x86_64 0:1.2.90-5.el7 will be installed
+---> Package libtiff.x86_64 0:4.0.3-27.el7_3 will be installed
+--> Processing Dependency: libjbig.so.2.0()(64bit) for package: libtiff-4.0.3-27.el7_3.x86_64
+---> Package libwebp.x86_64 0:0.3.0-3.el7 will be installed
+---> Package openjpeg2.x86_64 0:2.1.2-1.el7 will be installed
+---> Package python-enum34.noarch 0:1.0.4-1.el7 will be installed
+---> Package python-ipaddress.noarch 0:1.0.16-3.el7 will be installed
+---> Package python-six.noarch 0:1.10.0-3.el7 will be installed
+---> Package python2-cffi.x86_64 0:1.5.2-1.el7 will be installed
+--> Processing Dependency: python-pycparser for package: python2-cffi-1.5.2-1.el7.x86_64
+---> Package python2-idna.noarch 0:2.5-1.el7 will be installed
+---> Package python2-olefile.noarch 0:0.44-1.el7 will be installed
+---> Package python2-pyasn1.noarch 0:0.1.9-7.el7 will be installed
+---> Package ruby-libs.x86_64 0:2.0.0.648-29.el7 will be installed
+---> Package rubygems.noarch 0:2.0.14.1-29.el7 will be installed
+--> Processing Dependency: rubygem(rdoc) >= 4.0.0 for package: rubygems-2.0.14.1-29.el7.noarch
+--> Processing Dependency: rubygem(psych) >= 2.0.0 for package: rubygems-2.0.14.1-29.el7.noarch
+--> Processing Dependency: rubygem(io-console) >= 0.4.2 for package: rubygems-2.0.14.1-29.el7.noarch
+--> Processing Dependency: /usr/bin/ruby for package: rubygems-2.0.14.1-29.el7.noarch
+--> Running transaction check
+---> Package jbigkit-libs.x86_64 0:2.0-11.el7 will be installed
+---> Package python-pycparser.noarch 0:2.14-1.el7 will be installed
+--> Processing Dependency: python-ply for package: python-pycparser-2.14-1.el7.noarch
+---> Package ruby.x86_64 0:2.0.0.648-29.el7 will be installed
+--> Processing Dependency: rubygem(bigdecimal) >= 1.2.0 for package: ruby-2.0.0.648-29.el7.x86_64
+---> Package rubygem-io-console.x86_64 0:0.4.2-29.el7 will be installed
+---> Package rubygem-psych.x86_64 0:2.0.0-29.el7 will be installed
+---> Package rubygem-rdoc.noarch 0:4.0.0-29.el7 will be installed
+--> Processing Dependency: ruby(irb) = 2.0.0.648 for package: rubygem-rdoc-4.0.0-29.el7.noarch
+--> Running transaction check
+---> Package python-ply.noarch 0:3.4-10.el7 will be installed
+---> Package ruby-irb.noarch 0:2.0.0.648-29.el7 will be installed
+---> Package rubygem-bigdecimal.x86_64 0:1.2.0-29.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                  Arch   Version          Repository               Size
+================================================================================
+Installing:
+ openstack-packstack      noarch 8.0.2-1.el7      centos-openstack-mitaka 243 k
+Installing for dependencies:
+ PyYAML                   x86_64 3.10-11.el7      base                    153 k
+ jbigkit-libs             x86_64 2.0-11.el7       base                     46 k
+ lcms2                    x86_64 2.6-3.el7        base                    150 k
+ libimagequant            x86_64 2.8.2-2.el7      centos-openstack-mitaka  52 k
+ libjpeg-turbo            x86_64 1.2.90-5.el7     base                    134 k
+ libtiff                  x86_64 4.0.3-27.el7_3   updates                 170 k
+ libwebp                  x86_64 0.3.0-3.el7      base                    170 k
+ libyaml                  x86_64 0.1.4-11.el7_0   base                     55 k
+ openjpeg2                x86_64 2.1.2-1.el7      centos-openstack-mitaka 112 k
+ openstack-packstack-puppet
+                          noarch 8.0.2-1.el7      centos-openstack-mitaka  17 k
+ openstack-puppet-modules noarch 1:8.1.13-1.el7   centos-openstack-mitaka 3.2 M
+ pyOpenSSL                noarch 0.15.1-1.el7     centos-openstack-mitaka 182 k
+ python-docutils          noarch 0.11-0.2.20130715svn7687.el7
+                                                  base                    1.5 M
+ python-enum34            noarch 1.0.4-1.el7      base                     52 k
+ python-ipaddress         noarch 1.0.16-3.el7     centos-openstack-mitaka  34 k
+ python-netaddr           noarch 0.7.18-1.el7     centos-openstack-mitaka 1.3 M
+ python-ply               noarch 3.4-10.el7       base                    123 k
+ python-pycparser         noarch 2.14-1.el7       base                    104 k
+ python-six               noarch 1.10.0-3.el7     centos-openstack-mitaka  30 k
+ python2-cffi             x86_64 1.5.2-1.el7      centos-openstack-mitaka 214 k
+ python2-cryptography     x86_64 1.3.1-3.el7      base                    471 k
+ python2-idna             noarch 2.5-1.el7        centos-openstack-mitaka  94 k
+ python2-olefile          noarch 0.44-1.el7       centos-openstack-mitaka 773 k
+ python2-pillow           x86_64 4.0.0-1.el7      centos-openstack-mitaka 552 k
+ python2-pyasn1           noarch 0.1.9-7.el7      base                    100 k
+ python2-setuptools       noarch 22.0.5-1.el7     centos-openstack-mitaka 485 k
+ ruby                     x86_64 2.0.0.648-29.el7 base                     68 k
+ ruby-irb                 noarch 2.0.0.648-29.el7 base                     89 k
+ ruby-libs                x86_64 2.0.0.648-29.el7 base                    2.8 M
+ rubygem-bigdecimal       x86_64 1.2.0-29.el7     base                     80 k
+ rubygem-io-console       x86_64 0.4.2-29.el7     base                     51 k
+ rubygem-json             x86_64 1.7.7-29.el7     base                     76 k
+ rubygem-psych            x86_64 2.0.0-29.el7     base                     78 k
+ rubygem-rdoc             noarch 4.0.0-29.el7     base                    319 k
+ rubygems                 noarch 2.0.14.1-29.el7  base                    216 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+35 Dependent packages)
+
+Total download size: 14 M
+Installed size: 55 M
+Downloading packages:
+http://mirror.centos.org/centos/7/cloud/x86_64/openstack-mitaka/common/libimagequant-2.8.2-2.el7.x86_64.rpm: [Errno 14] curl#7 - "Failed to connect to 2605:9000:401:102::2: Network is unreachable"
+Trying other mirror.
+--------------------------------------------------------------------------------
+Total                                              636 kB/s |  14 MB  00:22     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : ruby-libs-2.0.0.648-29.el7.x86_64                           1/36 
+  Installing : libyaml-0.1.4-11.el7_0.x86_64                               2/36 
+  Installing : libjpeg-turbo-1.2.90-5.el7.x86_64                           3/36 
+  Installing : rubygem-bigdecimal-1.2.0-29.el7.x86_64                      4/36 
+  Installing : rubygem-psych-2.0.0-29.el7.x86_64                           5/36 
+  Installing : rubygem-json-1.7.7-29.el7.x86_64                            6/36 
+  Installing : rubygem-io-console-0.4.2-29.el7.x86_64                      7/36 
+  Installing : ruby-irb-2.0.0.648-29.el7.noarch                            8/36 
+  Installing : ruby-2.0.0.648-29.el7.x86_64                                9/36 
+  Installing : rubygems-2.0.14.1-29.el7.noarch                            10/36 
+  Installing : rubygem-rdoc-4.0.0-29.el7.noarch                           11/36 
+  Installing : 1:openstack-puppet-modules-8.1.13-1.el7.noarch             12/36 
+  Installing : PyYAML-3.10-11.el7.x86_64                                  13/36 
+  Installing : libwebp-0.3.0-3.el7.x86_64                                 14/36 
+  Installing : python-six-1.10.0-3.el7.noarch                             15/36 
+  Installing : python2-pyasn1-0.1.9-7.el7.noarch                          16/36 
+  Installing : libimagequant-2.8.2-2.el7.x86_64                           17/36 
+  Installing : python2-idna-2.5-1.el7.noarch                              18/36 
+  Installing : jbigkit-libs-2.0-11.el7.x86_64                             19/36 
+  Installing : libtiff-4.0.3-27.el7_3.x86_64                              20/36 
+  Installing : lcms2-2.6-3.el7.x86_64                                     21/36 
+  Installing : openstack-packstack-puppet-8.0.2-1.el7.noarch              22/36 
+  Installing : python2-setuptools-22.0.5-1.el7.noarch                     23/36 
+  Installing : python-ply-3.4-10.el7.noarch                               24/36 
+  Installing : python-pycparser-2.14-1.el7.noarch                         25/36 
+  Installing : python2-cffi-1.5.2-1.el7.x86_64                            26/36 
+  Installing : python-ipaddress-1.0.16-3.el7.noarch                       27/36 
+  Installing : python-netaddr-0.7.18-1.el7.noarch                         28/36 
+  Installing : openjpeg2-2.1.2-1.el7.x86_64                               29/36 
+  Installing : python2-olefile-0.44-1.el7.noarch                          30/36 
+  Installing : python2-pillow-4.0.0-1.el7.x86_64                          31/36 
+  Installing : python-docutils-0.11-0.2.20130715svn7687.el7.noarch        32/36 
+  Installing : python-enum34-1.0.4-1.el7.noarch                           33/36 
+  Installing : python2-cryptography-1.3.1-3.el7.x86_64                    34/36 
+  Installing : pyOpenSSL-0.15.1-1.el7.noarch                              35/36 
+  Installing : openstack-packstack-8.0.2-1.el7.noarch                     36/36 
+  Verifying  : python-docutils-0.11-0.2.20130715svn7687.el7.noarch         1/36 
+  Verifying  : libtiff-4.0.3-27.el7_3.x86_64                               2/36 
+  Verifying  : rubygem-rdoc-4.0.0-29.el7.noarch                            3/36 
+  Verifying  : libjpeg-turbo-1.2.90-5.el7.x86_64                           4/36 
+  Verifying  : rubygem-bigdecimal-1.2.0-29.el7.x86_64                      5/36 
+  Verifying  : pyOpenSSL-0.15.1-1.el7.noarch                               6/36 
+  Verifying  : python-enum34-1.0.4-1.el7.noarch                            7/36 
+  Verifying  : ruby-irb-2.0.0.648-29.el7.noarch                            8/36 
+  Verifying  : ruby-libs-2.0.0.648-29.el7.x86_64                           9/36 
+  Verifying  : rubygem-psych-2.0.0-29.el7.x86_64                          10/36 
+  Verifying  : python2-olefile-0.44-1.el7.noarch                          11/36 
+  Verifying  : openjpeg2-2.1.2-1.el7.x86_64                               12/36 
+  Verifying  : python-netaddr-0.7.18-1.el7.noarch                         13/36 
+  Verifying  : rubygem-json-1.7.7-29.el7.x86_64                           14/36 
+  Verifying  : python-ipaddress-1.0.16-3.el7.noarch                       15/36 
+  Verifying  : python-ply-3.4-10.el7.noarch                               16/36 
+  Verifying  : rubygem-io-console-0.4.2-29.el7.x86_64                     17/36 
+  Verifying  : python-pycparser-2.14-1.el7.noarch                         18/36 
+  Verifying  : python2-setuptools-22.0.5-1.el7.noarch                     19/36 
+  Verifying  : openstack-packstack-puppet-8.0.2-1.el7.noarch              20/36 
+  Verifying  : python2-pillow-4.0.0-1.el7.x86_64                          21/36 
+  Verifying  : lcms2-2.6-3.el7.x86_64                                     22/36 
+  Verifying  : jbigkit-libs-2.0-11.el7.x86_64                             23/36 
+  Verifying  : rubygems-2.0.14.1-29.el7.noarch                            24/36 
+  Verifying  : libyaml-0.1.4-11.el7_0.x86_64                              25/36 
+  Verifying  : 1:openstack-puppet-modules-8.1.13-1.el7.noarch             26/36 
+  Verifying  : openstack-packstack-8.0.2-1.el7.noarch                     27/36 
+  Verifying  : python2-cryptography-1.3.1-3.el7.x86_64                    28/36 
+  Verifying  : python2-cffi-1.5.2-1.el7.x86_64                            29/36 
+  Verifying  : python2-idna-2.5-1.el7.noarch                              30/36 
+  Verifying  : libimagequant-2.8.2-2.el7.x86_64                           31/36 
+  Verifying  : python2-pyasn1-0.1.9-7.el7.noarch                          32/36 
+  Verifying  : PyYAML-3.10-11.el7.x86_64                                  33/36 
+  Verifying  : ruby-2.0.0.648-29.el7.x86_64                               34/36 
+  Verifying  : python-six-1.10.0-3.el7.noarch                             35/36 
+  Verifying  : libwebp-0.3.0-3.el7.x86_64                                 36/36 
+
+Installed:
+  openstack-packstack.noarch 0:8.0.2-1.el7                                      
+
+Dependency Installed:
+  PyYAML.x86_64 0:3.10-11.el7                                                   
+  jbigkit-libs.x86_64 0:2.0-11.el7                                              
+  lcms2.x86_64 0:2.6-3.el7                                                      
+  libimagequant.x86_64 0:2.8.2-2.el7                                            
+  libjpeg-turbo.x86_64 0:1.2.90-5.el7                                           
+  libtiff.x86_64 0:4.0.3-27.el7_3                                               
+  libwebp.x86_64 0:0.3.0-3.el7                                                  
+  libyaml.x86_64 0:0.1.4-11.el7_0                                               
+  openjpeg2.x86_64 0:2.1.2-1.el7                                                
+  openstack-packstack-puppet.noarch 0:8.0.2-1.el7                               
+  openstack-puppet-modules.noarch 1:8.1.13-1.el7                                
+  pyOpenSSL.noarch 0:0.15.1-1.el7                                               
+  python-docutils.noarch 0:0.11-0.2.20130715svn7687.el7                         
+  python-enum34.noarch 0:1.0.4-1.el7                                            
+  python-ipaddress.noarch 0:1.0.16-3.el7                                        
+  python-netaddr.noarch 0:0.7.18-1.el7                                          
+  python-ply.noarch 0:3.4-10.el7                                                
+  python-pycparser.noarch 0:2.14-1.el7                                          
+  python-six.noarch 0:1.10.0-3.el7                                              
+  python2-cffi.x86_64 0:1.5.2-1.el7                                             
+  python2-cryptography.x86_64 0:1.3.1-3.el7                                     
+  python2-idna.noarch 0:2.5-1.el7                                               
+  python2-olefile.noarch 0:0.44-1.el7                                           
+  python2-pillow.x86_64 0:4.0.0-1.el7                                           
+  python2-pyasn1.noarch 0:0.1.9-7.el7                                           
+  python2-setuptools.noarch 0:22.0.5-1.el7                                      
+  ruby.x86_64 0:2.0.0.648-29.el7                                                
+  ruby-irb.noarch 0:2.0.0.648-29.el7                                            
+  ruby-libs.x86_64 0:2.0.0.648-29.el7                                           
+  rubygem-bigdecimal.x86_64 0:1.2.0-29.el7                                      
+  rubygem-io-console.x86_64 0:0.4.2-29.el7                                      
+  rubygem-json.x86_64 0:1.7.7-29.el7                                            
+  rubygem-psych.x86_64 0:2.0.0-29.el7                                           
+  rubygem-rdoc.noarch 0:4.0.0-29.el7                                            
+  rubygems.noarch 0:2.0.14.1-29.el7                                             
+
+Complete!
+Welcome to the Packstack setup utility
+
+The installation log file is available at: /var/tmp/packstack/20170616-032554-H_H5dO/openstack-setup.log
+
+Installing:
+Clean Up                                             [ [32mDONE[0m ]
+Discovering ip protocol version                      [ [32mDONE[0m ]
+Setting up ssh keys                                  [ [32mDONE[0m ]
+Preparing servers                                    [ [32mDONE[0m ]
+Pre installing Puppet and discovering hosts' details [ [32mDONE[0m ]
+Adding pre install manifest entries                  [ [32mDONE[0m ]
+Setting up CACERT                                    [ [32mDONE[0m ]
+Adding AMQP manifest entries                         [ [32mDONE[0m ]
+Adding MariaDB manifest entries                      [ [32mDONE[0m ]
+Adding Apache manifest entries                       [ [32mDONE[0m ]
+Fixing Keystone LDAP config parameters to be undef if empty[ [32mDONE[0m ]
+Adding Keystone manifest entries                     [ [32mDONE[0m ]
+Adding Cinder Keystone manifest entries              [ [32mDONE[0m ]
+Checking if the Cinder server has a cinder-volumes vg[ [32mDONE[0m ]
+Adding Cinder manifest entries                       [ [32mDONE[0m ]
+Adding Neutron VPNaaS Agent manifest entries         [ [32mDONE[0m ]
+Adding Neutron FWaaS Agent manifest entries          [ [32mDONE[0m ]
+Adding Neutron LBaaS Agent manifest entries          [ [32mDONE[0m ]
+Adding Neutron API manifest entries                  [ [32mDONE[0m ]
+Adding Neutron Keystone manifest entries             [ [32mDONE[0m ]
+Adding Neutron L3 manifest entries                   [ [32mDONE[0m ]
+Adding Neutron L2 Agent manifest entries             [ [32mDONE[0m ]
+Adding Neutron DHCP Agent manifest entries           [ [32mDONE[0m ]
+Adding Neutron Metering Agent manifest entries       [ [32mDONE[0m ]
+Adding Neutron Metadata Agent manifest entries       [ [32mDONE[0m ]
+Adding Neutron SR-IOV Switch Agent manifest entries  [ [32mDONE[0m ]
+Checking if NetworkManager is enabled and running    [ [32mDONE[0m ]
+Adding OpenStack Client manifest entries             [ [32mDONE[0m ]
+Adding Horizon manifest entries                      [ [32mDONE[0m ]
+Copying Puppet modules and manifests                 [ [32mDONE[0m ]
+Applying 192.168.122.31_prescript.pp
+192.168.122.31_prescript.pp:                         [ [32mDONE[0m ]
+Applying 192.168.122.31_amqp.pp
+Applying 192.168.122.31_mariadb.pp
+192.168.122.31_amqp.pp:                              [ [32mDONE[0m ]
+192.168.122.31_mariadb.pp:                           [ [32mDONE[0m ]
+Applying 192.168.122.31_apache.pp
+192.168.122.31_apache.pp:                            [ [32mDONE[0m ]
+Applying 192.168.122.31_keystone.pp
+Applying 192.168.122.31_cinder.pp
+Applying 192.168.122.31_neutron.pp
+Applying 192.168.122.31_osclient.pp
+Applying 192.168.122.31_horizon.pp
+192.168.122.31_keystone.pp:                          [ [32mDONE[0m ]
+192.168.122.31_horizon.pp:                           [ [32mDONE[0m ]
+192.168.122.31_cinder.pp:                            [ [32mDONE[0m ]
+192.168.122.31_osclient.pp:                          [ [32mDONE[0m ]
+192.168.122.31_neutron.pp:                           [ [32mDONE[0m ]
+Applying Puppet manifests                            [ [32mDONE[0m ]
+Finalizing                                           [ [32mDONE[0m ]
+
+ **** Installation completed successfully ******
+
+Additional information:
+ * Time synchronization installation was skipped. Please note that unsynchronized time on server instances might be problem for some OpenStack components.
+ * [33mWarning: NetworkManager is active on 192.168.122.31. OpenStack networking currently does not work on systems that have the Network Manager service enabled.[0m
+ * File /root/keystonerc_admin has been created on OpenStack client host 192.168.122.31. To use the command line tools you need to source the file.
+ * To access the OpenStack Dashboard browse to http://192.168.122.31/dashboard .
+Please, find your login credentials stored in the keystonerc_admin in your home directory.
+ * Because of the kernel update the host 192.168.122.31 requires reboot.
+ * The installation log file is available at: /var/tmp/packstack/20170616-032554-H_H5dO/openstack-setup.log
+ * The generated manifests are available at: /var/tmp/packstack/20170616-032554-H_H5dO/manifests
+Purging resources: 100% complete.
+Deleted 1 security_group.
+Created a new network:
++---------------------------+--------------------------------------+
+| Field                     | Value                                |
++---------------------------+--------------------------------------+
+| admin_state_up            | True                                 |
+| availability_zone_hints   |                                      |
+| availability_zones        |                                      |
+| created_at                | 2017-06-16T07:54:12                  |
+| description               |                                      |
+| id                        | c527e383-6746-4b06-bb2e-626d9e59d2ac |
+| ipv4_address_scope        |                                      |
+| ipv6_address_scope        |                                      |
+| is_default                | False                                |
+| mtu                       | 1450                                 |
+| name                      | br-ex                                |
+| provider:network_type     | vxlan                                |
+| provider:physical_network |                                      |
+| provider:segmentation_id  | 78                                   |
+| router:external           | True                                 |
+| shared                    | False                                |
+| status                    | ACTIVE                               |
+| subnets                   |                                      |
+| tags                      |                                      |
+| tenant_id                 | 364055bdd11444869dac5375e3d761ea     |
+| updated_at                | 2017-06-16T07:54:12                  |
++---------------------------+--------------------------------------+
+Created a new subnet:
++-------------------+--------------------------------------------------+
+| Field             | Value                                            |
++-------------------+--------------------------------------------------+
+| allocation_pools  | {"start": "58.215.33.2", "end": "58.215.33.254"} |
+| cidr              | 58.215.33.0/24                                   |
+| created_at        | 2017-06-16T07:54:17                              |
+| description       |                                                  |
+| dns_nameservers   |                                                  |
+| enable_dhcp       | True                                             |
+| gateway_ip        | 58.215.33.1                                      |
+| host_routes       |                                                  |
+| id                | af5c3604-24b5-4b6c-91c0-7a7755ca2930             |
+| ip_version        | 4                                                |
+| ipv6_address_mode |                                                  |
+| ipv6_ra_mode      |                                                  |
+| name              |                                                  |
+| network_id        | c527e383-6746-4b06-bb2e-626d9e59d2ac             |
+| subnetpool_id     |                                                  |
+| tenant_id         | 364055bdd11444869dac5375e3d761ea                 |
+| updated_at        | 2017-06-16T07:54:17                              |
++-------------------+--------------------------------------------------+
+Start kube::util::setup_ceph
+Start kube::util::do_setup_ceph
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.cn99.com
+ * epel: mirror.premi.st
+ * extras: mirrors.cn99.com
+ * updates: mirrors.cn99.com
+Package python-pip is obsoleted by python2-pip, trying to install python2-pip-8.1.2-5.el7.noarch instead
+Resolving Dependencies
+--> Running transaction check
+---> Package python2-pip.noarch 0:8.1.2-5.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package              Arch            Version               Repository     Size
+================================================================================
+Installing:
+ python2-pip          noarch          8.1.2-5.el7           epel          1.7 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 1.7 M
+Installed size: 7.2 M
+Downloading packages:
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : python2-pip-8.1.2-5.el7.noarch                               1/1 
+  Verifying  : python2-pip-8.1.2-5.el7.noarch                               1/1 
+
+Installed:
+  python2-pip.noarch 0:8.1.2-5.el7                                              
+
+Complete!
+Collecting ceph-deploy
+  Downloading ceph-deploy-1.5.38.tar.gz (115kB)
+Collecting setuptools (from ceph-deploy)
+  Downloading setuptools-36.0.1-py2.py3-none-any.whl (476kB)
+Installing collected packages: setuptools, ceph-deploy
+  Found existing installation: setuptools 22.0.5
+    Uninstalling setuptools-22.0.5:
+      Successfully uninstalled setuptools-22.0.5
+  Running setup.py install for ceph-deploy: started
+    Running setup.py install for ceph-deploy: finished with status 'done'
+Successfully installed ceph-deploy-1.5.38 setuptools-36.0.1
+You are using pip version 8.1.2, however version 9.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+[ceph_deploy.conf][DEBUG ] found configuration file at: /root/.cephdeploy.conf
+[ceph_deploy.cli][INFO  ] Invoked (1.5.38): /usr/bin/ceph-deploy new localhost.localdomain
+[ceph_deploy.cli][INFO  ] ceph-deploy options:
+[ceph_deploy.cli][INFO  ]  username                      : None
+[ceph_deploy.cli][INFO  ]  func                          : <function new at 0x18ef938>
+[ceph_deploy.cli][INFO  ]  verbose                       : False
+[ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[ceph_deploy.cli][INFO  ]  quiet                         : False
+[ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x159dcf8>
+[ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[ceph_deploy.cli][INFO  ]  ssh_copykey                   : True
+[ceph_deploy.cli][INFO  ]  mon                           : ['localhost.localdomain']
+[ceph_deploy.cli][INFO  ]  public_network                : None
+[ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[ceph_deploy.cli][INFO  ]  cluster_network               : None
+[ceph_deploy.cli][INFO  ]  default_release               : False
+[ceph_deploy.cli][INFO  ]  fsid                          : None
+[ceph_deploy.new][DEBUG ] Creating new cluster named ceph
+[ceph_deploy.new][INFO  ] making sure passwordless SSH succeeds
+[localhost.localdomain][DEBUG ] connected to host: localhost.localdomain 
+[localhost.localdomain][DEBUG ] detect platform information from remote host
+[localhost.localdomain][DEBUG ] detect machine type
+[localhost.localdomain][DEBUG ] find the location of an executable
+[localhost.localdomain][INFO  ] Running command: /usr/sbin/ip link show
+[localhost.localdomain][INFO  ] Running command: /usr/sbin/ip addr show
+[localhost.localdomain][DEBUG ] IP addresses found: [u'10.62.105.209', u'192.168.122.31']
+[ceph_deploy.new][DEBUG ] Resolving host localhost.localdomain
+[ceph_deploy.new][DEBUG ] Monitor localhost at 10.62.105.209
+[ceph_deploy.new][DEBUG ] Monitor initial members are ['localhost']
+[ceph_deploy.new][DEBUG ] Monitor addrs are ['10.62.105.209']
+[ceph_deploy.new][DEBUG ] Creating a random mon key...
+[ceph_deploy.new][DEBUG ] Writing monitor keyring to ceph.mon.keyring...
+[ceph_deploy.new][DEBUG ] Writing initial config to ceph.conf...
+[ceph_deploy.conf][DEBUG ] found configuration file at: /root/.cephdeploy.conf
+[ceph_deploy.cli][INFO  ] Invoked (1.5.38): /usr/bin/ceph-deploy install localhost.localdomain
+[ceph_deploy.cli][INFO  ] ceph-deploy options:
+[ceph_deploy.cli][INFO  ]  verbose                       : False
+[ceph_deploy.cli][INFO  ]  testing                       : None
+[ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x12dbf38>
+[ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[ceph_deploy.cli][INFO  ]  dev_commit                    : None
+[ceph_deploy.cli][INFO  ]  install_mds                   : False
+[ceph_deploy.cli][INFO  ]  stable                        : None
+[ceph_deploy.cli][INFO  ]  default_release               : False
+[ceph_deploy.cli][INFO  ]  username                      : None
+[ceph_deploy.cli][INFO  ]  adjust_repos                  : True
+[ceph_deploy.cli][INFO  ]  func                          : <function install at 0x15731b8>
+[ceph_deploy.cli][INFO  ]  install_mgr                   : False
+[ceph_deploy.cli][INFO  ]  install_all                   : False
+[ceph_deploy.cli][INFO  ]  repo                          : False
+[ceph_deploy.cli][INFO  ]  host                          : ['localhost.localdomain']
+[ceph_deploy.cli][INFO  ]  install_rgw                   : False
+[ceph_deploy.cli][INFO  ]  install_tests                 : False
+[ceph_deploy.cli][INFO  ]  repo_url                      : None
+[ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[ceph_deploy.cli][INFO  ]  install_osd                   : False
+[ceph_deploy.cli][INFO  ]  version_kind                  : stable
+[ceph_deploy.cli][INFO  ]  install_common                : False
+[ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[ceph_deploy.cli][INFO  ]  quiet                         : False
+[ceph_deploy.cli][INFO  ]  dev                           : master
+[ceph_deploy.cli][INFO  ]  nogpgcheck                    : False
+[ceph_deploy.cli][INFO  ]  local_mirror                  : None
+[ceph_deploy.cli][INFO  ]  release                       : None
+[ceph_deploy.cli][INFO  ]  install_mon                   : False
+[ceph_deploy.cli][INFO  ]  gpg_url                       : None
+[ceph_deploy.install][DEBUG ] Installing stable version jewel on cluster ceph hosts localhost.localdomain
+[ceph_deploy.install][DEBUG ] Detecting platform for host localhost.localdomain ...
+[localhost.localdomain][DEBUG ] connected to host: localhost.localdomain 
+[localhost.localdomain][DEBUG ] detect platform information from remote host
+[localhost.localdomain][DEBUG ] detect machine type
+[ceph_deploy.install][INFO  ] Distro info: CentOS Linux 7.3.1611 Core
+[localhost.localdomain][INFO  ] installing Ceph on localhost.localdomain
+[localhost.localdomain][INFO  ] Running command: yum clean all
+[localhost.localdomain][DEBUG ] Loaded plugins: fastestmirror
+[localhost.localdomain][DEBUG ] Cleaning repos: base centos-ceph-hammer centos-openstack-mitaka centos-qemu-ev
+[localhost.localdomain][DEBUG ]               : epel extras updates
+[localhost.localdomain][DEBUG ] Cleaning up everything
+[localhost.localdomain][DEBUG ] Cleaning up list of fastest mirrors
+[localhost.localdomain][INFO  ] Running command: yum -y install epel-release
+[localhost.localdomain][DEBUG ] Loaded plugins: fastestmirror
+[localhost.localdomain][DEBUG ] Determining fastest mirrors
+[localhost.localdomain][DEBUG ]  * base: mirrors.163.com
+[localhost.localdomain][DEBUG ]  * epel: ftp.jaist.ac.jp
+[localhost.localdomain][DEBUG ]  * extras: mirrors.163.com
+[localhost.localdomain][DEBUG ]  * updates: mirrors.163.com
+[localhost.localdomain][DEBUG ] Package epel-release-7-9.noarch already installed and latest version
+[localhost.localdomain][DEBUG ] Nothing to do
+[localhost.localdomain][INFO  ] Running command: yum -y install yum-plugin-priorities
+[localhost.localdomain][DEBUG ] Loaded plugins: fastestmirror
+[localhost.localdomain][DEBUG ] Loading mirror speeds from cached hostfile
+[localhost.localdomain][DEBUG ]  * base: mirrors.163.com
+[localhost.localdomain][DEBUG ]  * epel: ftp.jaist.ac.jp
+[localhost.localdomain][DEBUG ]  * extras: mirrors.163.com
+[localhost.localdomain][DEBUG ]  * updates: mirrors.163.com
+[localhost.localdomain][DEBUG ] Resolving Dependencies
+[localhost.localdomain][DEBUG ] --> Running transaction check
+[localhost.localdomain][DEBUG ] ---> Package yum-plugin-priorities.noarch 0:1.1.31-40.el7 will be installed
+[localhost.localdomain][DEBUG ] --> Finished Dependency Resolution
+[localhost.localdomain][DEBUG ] 
+[localhost.localdomain][DEBUG ] Dependencies Resolved
+[localhost.localdomain][DEBUG ] 
+[localhost.localdomain][DEBUG ] ================================================================================
+[localhost.localdomain][DEBUG ]  Package                     Arch         Version              Repository  Size
+[localhost.localdomain][DEBUG ] ================================================================================
+[localhost.localdomain][DEBUG ] Installing:
+[localhost.localdomain][DEBUG ]  yum-plugin-priorities       noarch       1.1.31-40.el7        base        27 k
+[localhost.localdomain][DEBUG ] 
+[localhost.localdomain][DEBUG ] Transaction Summary
+[localhost.localdomain][DEBUG ] ================================================================================
+[localhost.localdomain][DEBUG ] Install  1 Package
+[localhost.localdomain][DEBUG ] 
+[localhost.localdomain][DEBUG ] Total download size: 27 k
+[localhost.localdomain][DEBUG ] Installed size: 28 k
+[localhost.localdomain][DEBUG ] Downloading packages:
+[localhost.localdomain][DEBUG ] Running transaction check
+[localhost.localdomain][DEBUG ] Running transaction test
+[localhost.localdomain][DEBUG ] Transaction test succeeded
+[localhost.localdomain][DEBUG ] Running transaction
+[localhost.localdomain][DEBUG ]   Installing : yum-plugin-priorities-1.1.31-40.el7.noarch                   1/1 
+[localhost.localdomain][DEBUG ]   Verifying  : yum-plugin-priorities-1.1.31-40.el7.noarch                   1/1 
+[localhost.localdomain][DEBUG ] 
+[localhost.localdomain][DEBUG ] Installed:
+[localhost.localdomain][DEBUG ]   yum-plugin-priorities.noarch 0:1.1.31-40.el7                                  
+[localhost.localdomain][DEBUG ] 
+[localhost.localdomain][DEBUG ] Complete!
+[localhost.localdomain][DEBUG ] Configure Yum priorities to include obsoletes
+[localhost.localdomain][WARNING] check_obsoletes has been enabled for Yum priorities plugin
+[localhost.localdomain][INFO  ] Running command: rpm --import https://download.ceph.com/keys/release.asc
+[localhost.localdomain][INFO  ] Running command: rpm -Uvh --replacepkgs https://download.ceph.com/rpm-jewel/el7/noarch/ceph-release-1-0.el7.noarch.rpm
+[localhost.localdomain][DEBUG ] Retrieving https://download.ceph.com/rpm-jewel/el7/noarch/ceph-release-1-0.el7.noarch.rpm
+[localhost.localdomain][DEBUG ] Preparing...                          ########################################
+[localhost.localdomain][DEBUG ] Updating / installing...
+[localhost.localdomain][DEBUG ] ceph-release-1-1.el7                  ########################################
+[localhost.localdomain][WARNING] ensuring that /etc/yum.repos.d/ceph.repo contains a high priority
+[localhost.localdomain][WARNING] altered ceph.repo priorities to contain: priority=1
+[localhost.localdomain][INFO  ] Running command: yum -y install ceph ceph-radosgw
+[localhost.localdomain][DEBUG ] Loaded plugins: fastestmirror, priorities
+[localhost.localdomain][DEBUG ] Loading mirror speeds from cached hostfile
+[localhost.localdomain][DEBUG ]  * base: mirrors.163.com
+[localhost.localdomain][DEBUG ]  * epel: ftp.jaist.ac.jp
+[localhost.localdomain][DEBUG ]  * extras: mirrors.163.com
+[localhost.localdomain][DEBUG ]  * updates: mirrors.163.com
+[localhost.localdomain][DEBUG ] 72 packages excluded due to repository priority protections
+[localhost.localdomain][DEBUG ] Resolving Dependencies
+[localhost.localdomain][DEBUG ] --> Running transaction check
+[localhost.localdomain][DEBUG ] ---> Package ceph.x86_64 1:10.2.7-0.el7 will be installed
+[localhost.localdomain][DEBUG ] --> Processing Dependency: ceph-mon = 1:10.2.7-0.el7 for package: 1:ceph-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: ceph-osd = 1:10.2.7-0.el7 for package: 1:ceph-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: ceph-mds = 1:10.2.7-0.el7 for package: 1:ceph-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] ---> Package ceph-radosgw.x86_64 1:10.2.7-0.el7 will be installed
+[localhost.localdomain][DEBUG ] --> Processing Dependency: librgw2 = 1:10.2.7-0.el7 for package: 1:ceph-radosgw-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: ceph-common = 1:10.2.7-0.el7 for package: 1:ceph-radosgw-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: librados2 = 1:10.2.7-0.el7 for package: 1:ceph-radosgw-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: ceph-selinux = 1:10.2.7-0.el7 for package: 1:ceph-radosgw-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: python-flask for package: 1:ceph-radosgw-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: librgw.so.2()(64bit) for package: 1:ceph-radosgw-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: libfcgi.so.0()(64bit) for package: 1:ceph-radosgw-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Running transaction check
+[localhost.localdomain][DEBUG ] ---> Package ceph-common.x86_64 1:10.2.7-0.el7 will be installed
+[localhost.localdomain][DEBUG ] --> Processing Dependency: python-rados = 1:10.2.7-0.el7 for package: 1:ceph-common-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: librbd1 = 1:10.2.7-0.el7 for package: 1:ceph-common-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: python-rbd = 1:10.2.7-0.el7 for package: 1:ceph-common-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: python-cephfs = 1:10.2.7-0.el7 for package: 1:ceph-common-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: libcephfs1 = 1:10.2.7-0.el7 for package: 1:ceph-common-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: libboost_regex-mt.so.1.53.0()(64bit) for package: 1:ceph-common-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: libboost_iostreams-mt.so.1.53.0()(64bit) for package: 1:ceph-common-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: libbabeltrace.so.1()(64bit) for package: 1:ceph-common-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: libbabeltrace-ctf.so.1()(64bit) for package: 1:ceph-common-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: libradosstriper.so.1()(64bit) for package: 1:ceph-common-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] ---> Package ceph-mds.x86_64 1:10.2.7-0.el7 will be installed
+[localhost.localdomain][DEBUG ] --> Processing Dependency: ceph-base = 1:10.2.7-0.el7 for package: 1:ceph-mds-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] ---> Package ceph-mon.x86_64 1:10.2.7-0.el7 will be installed
+[localhost.localdomain][DEBUG ] --> Processing Dependency: libboost_random-mt.so.1.53.0()(64bit) for package: 1:ceph-mon-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: libleveldb.so.1()(64bit) for package: 1:ceph-mon-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] ---> Package ceph-osd.x86_64 1:10.2.7-0.el7 will be installed
+[localhost.localdomain][DEBUG ] --> Processing Dependency: libfuse.so.2(FUSE_2.8)(64bit) for package: 1:ceph-osd-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: gdisk for package: 1:ceph-osd-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: libfuse.so.2(FUSE_2.5)(64bit) for package: 1:ceph-osd-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: libfuse.so.2(FUSE_2.6)(64bit) for package: 1:ceph-osd-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: libfuse.so.2(FUSE_2.2)(64bit) for package: 1:ceph-osd-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: libfuse.so.2()(64bit) for package: 1:ceph-osd-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] ---> Package ceph-selinux.x86_64 1:10.2.7-0.el7 will be installed
+[localhost.localdomain][DEBUG ] ---> Package fcgi.x86_64 0:2.4.0-25.el7 will be installed
+[localhost.localdomain][DEBUG ] ---> Package librados2.x86_64 1:0.94.9-0.el7 will be updated
+[localhost.localdomain][DEBUG ] ---> Package librados2.x86_64 1:10.2.7-0.el7 will be an update
+[localhost.localdomain][DEBUG ] ---> Package librgw2.x86_64 1:10.2.7-0.el7 will be installed
+[localhost.localdomain][DEBUG ] ---> Package python-flask.noarch 1:0.10.1-4.el7 will be installed
+[localhost.localdomain][DEBUG ] --> Processing Dependency: python-werkzeug for package: 1:python-flask-0.10.1-4.el7.noarch
+[localhost.localdomain][DEBUG ] --> Processing Dependency: python-itsdangerous for package: 1:python-flask-0.10.1-4.el7.noarch
+[localhost.localdomain][DEBUG ] --> Running transaction check
+[localhost.localdomain][DEBUG ] ---> Package boost-iostreams.x86_64 0:1.53.0-26.el7 will be installed
+[localhost.localdomain][DEBUG ] ---> Package boost-random.x86_64 0:1.53.0-26.el7 will be installed
+[localhost.localdomain][DEBUG ] ---> Package boost-regex.x86_64 0:1.53.0-26.el7 will be installed
+[localhost.localdomain][DEBUG ] --> Processing Dependency: libicuuc.so.50()(64bit) for package: boost-regex-1.53.0-26.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: libicui18n.so.50()(64bit) for package: boost-regex-1.53.0-26.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: libicudata.so.50()(64bit) for package: boost-regex-1.53.0-26.el7.x86_64
+[localhost.localdomain][DEBUG ] ---> Package ceph-base.x86_64 1:10.2.7-0.el7 will be installed
+[localhost.localdomain][DEBUG ] --> Processing Dependency: cryptsetup for package: 1:ceph-base-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] --> Processing Dependency: hdparm for package: 1:ceph-base-10.2.7-0.el7.x86_64
+[localhost.localdomain][DEBUG ] ---> Package fuse-libs.x86_64 0:2.9.2-7.el7 will be installed
+[localhost.localdomain][DEBUG ] ---> Package gdisk.x86_64 0:0.8.6-5.el7 will be installed
+[localhost.localdomain][DEBUG ] ---> Package leveldb.x86_64 0:1.12.0-11.el7 will be installed
+[localhost.localdomain][DEBUG ] ---> Package libbabeltrace.x86_64 0:1.2.4-3.el7 will be installed
+[localhost.localdomain][DEBUG ] ---> Package libcephfs1.x86_64 1:10.2.7-0.el7 will be installed
+[localhost.localdomain][DEBUG ] ---> Package libradosstriper1.x86_64 1:10.2.7-0.el7 will be installed
+[localhost.localdomain][DEBUG ] ---> Package librbd1.x86_64 1:0.94.9-0.el7 will be updated
+[localhost.localdomain][DEBUG ] ---> Package librbd1.x86_64 1:10.2.7-0.el7 will be an update
+[localhost.localdomain][DEBUG ] ---> Package python-cephfs.x86_64 1:10.2.7-0.el7 will be installed
+[localhost.localdomain][DEBUG ] ---> Package python-itsdangerous.noarch 0:0.23-2.el7 will be installed
+[localhost.localdomain][DEBUG ] ---> Package python-rados.x86_64 1:10.2.7-0.el7 will be installed
+[localhost.localdomain][DEBUG ] ---> Package python-rbd.x86_64 1:10.2.7-0.el7 will be installed
+[localhost.localdomain][DEBUG ] ---> Package python-werkzeug.noarch 0:0.9.1-2.el7 will be installed
+[localhost.localdomain][DEBUG ] --> Running transaction check
+[localhost.localdomain][DEBUG ] ---> Package cryptsetup.x86_64 0:1.7.2-1.el7 will be installed
+[localhost.localdomain][DEBUG ] ---> Package hdparm.x86_64 0:9.43-5.el7 will be installed
+[localhost.localdomain][DEBUG ] ---> Package libicu.x86_64 0:50.1.2-15.el7 will be installed
+[localhost.localdomain][DEBUG ] --> Finished Dependency Resolution
+[localhost.localdomain][DEBUG ] 
+[localhost.localdomain][DEBUG ] Dependencies Resolved
+[localhost.localdomain][DEBUG ] 
+[localhost.localdomain][DEBUG ] ================================================================================
+[localhost.localdomain][DEBUG ]  Package                Arch      Version           Repository             Size
+[localhost.localdomain][DEBUG ] ================================================================================
+[localhost.localdomain][DEBUG ] Installing:
+[localhost.localdomain][DEBUG ]  ceph                   x86_64    1:10.2.7-0.el7    Ceph                  3.0 k
+[localhost.localdomain][DEBUG ]  ceph-radosgw           x86_64    1:10.2.7-0.el7    Ceph                  266 k
+[localhost.localdomain][DEBUG ] Installing for dependencies:
+[localhost.localdomain][DEBUG ]  boost-iostreams        x86_64    1.53.0-26.el7     base                   61 k
+[localhost.localdomain][DEBUG ]  boost-random           x86_64    1.53.0-26.el7     base                   39 k
+[localhost.localdomain][DEBUG ]  boost-regex            x86_64    1.53.0-26.el7     base                  300 k
+[localhost.localdomain][DEBUG ]  ceph-base              x86_64    1:10.2.7-0.el7    Ceph                  4.2 M
+[localhost.localdomain][DEBUG ]  ceph-common            x86_64    1:10.2.7-0.el7    Ceph                   17 M
+[localhost.localdomain][DEBUG ]  ceph-mds               x86_64    1:10.2.7-0.el7    Ceph                  2.8 M
+[localhost.localdomain][DEBUG ]  ceph-mon               x86_64    1:10.2.7-0.el7    Ceph                  2.8 M
+[localhost.localdomain][DEBUG ]  ceph-osd               x86_64    1:10.2.7-0.el7    Ceph                  9.0 M
+[localhost.localdomain][DEBUG ]  ceph-selinux           x86_64    1:10.2.7-0.el7    Ceph                   20 k
+[localhost.localdomain][DEBUG ]  cryptsetup             x86_64    1.7.2-1.el7       base                  124 k
+[localhost.localdomain][DEBUG ]  fcgi                   x86_64    2.4.0-25.el7      epel                   47 k
+[localhost.localdomain][DEBUG ]  fuse-libs              x86_64    2.9.2-7.el7       base                   93 k
+[localhost.localdomain][DEBUG ]  gdisk                  x86_64    0.8.6-5.el7       base                  187 k
+[localhost.localdomain][DEBUG ]  hdparm                 x86_64    9.43-5.el7        base                   83 k
+[localhost.localdomain][DEBUG ]  leveldb                x86_64    1.12.0-11.el7     epel                  161 k
+[localhost.localdomain][DEBUG ]  libbabeltrace          x86_64    1.2.4-3.el7       centos-ceph-hammer    146 k
+[localhost.localdomain][DEBUG ]  libcephfs1             x86_64    1:10.2.7-0.el7    Ceph                  1.9 M
+[localhost.localdomain][DEBUG ]  libicu                 x86_64    50.1.2-15.el7     base                  6.9 M
+[localhost.localdomain][DEBUG ]  libradosstriper1       x86_64    1:10.2.7-0.el7    Ceph                  1.8 M
+[localhost.localdomain][DEBUG ]  librgw2                x86_64    1:10.2.7-0.el7    Ceph                  2.9 M
+[localhost.localdomain][DEBUG ]  python-cephfs          x86_64    1:10.2.7-0.el7    Ceph                   78 k
+[localhost.localdomain][DEBUG ]  python-flask           noarch    1:0.10.1-4.el7    extras                204 k
+[localhost.localdomain][DEBUG ]  python-itsdangerous    noarch    0.23-2.el7        extras                 24 k
+[localhost.localdomain][DEBUG ]  python-rados           x86_64    1:10.2.7-0.el7    Ceph                  146 k
+[localhost.localdomain][DEBUG ]  python-rbd             x86_64    1:10.2.7-0.el7    Ceph                   79 k
+[localhost.localdomain][DEBUG ]  python-werkzeug        noarch    0.9.1-2.el7       extras                562 k
+[localhost.localdomain][DEBUG ] Updating for dependencies:
+[localhost.localdomain][DEBUG ]  librados2              x86_64    1:10.2.7-0.el7    Ceph                  1.9 M
+[localhost.localdomain][DEBUG ]  librbd1                x86_64    1:10.2.7-0.el7    Ceph                  2.5 M
+[localhost.localdomain][DEBUG ] 
+[localhost.localdomain][DEBUG ] Transaction Summary
+[localhost.localdomain][DEBUG ] ================================================================================
+[localhost.localdomain][DEBUG ] Install  2 Packages (+26 Dependent packages)
+[localhost.localdomain][DEBUG ] Upgrade             (  2 Dependent packages)
+[localhost.localdomain][DEBUG ] 
+[localhost.localdomain][DEBUG ] Total download size: 56 M
+[localhost.localdomain][DEBUG ] Downloading packages:
+[localhost.localdomain][DEBUG ] Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
+[localhost.localdomain][DEBUG ] --------------------------------------------------------------------------------
+[localhost.localdomain][DEBUG ] Total                                              2.6 MB/s |  56 MB  00:21     
+[localhost.localdomain][DEBUG ] Running transaction check
+[localhost.localdomain][DEBUG ] Running transaction test
+[localhost.localdomain][DEBUG ] Transaction test succeeded
+[localhost.localdomain][DEBUG ] Running transaction
+[localhost.localdomain][WARNING] Warning: RPMDB altered outside of yum.
+[localhost.localdomain][DEBUG ]   Installing : boost-iostreams-1.53.0-26.el7.x86_64                        1/32 
+[localhost.localdomain][DEBUG ]   Installing : boost-random-1.53.0-26.el7.x86_64                           2/32 
+[localhost.localdomain][DEBUG ]   Updating   : 1:librados2-10.2.7-0.el7.x86_64                             3/32 
+[localhost.localdomain][DEBUG ]   Installing : 1:python-rados-10.2.7-0.el7.x86_64                          4/32 
+[localhost.localdomain][DEBUG ]   Updating   : 1:librbd1-10.2.7-0.el7.x86_64                               5/32 
+[localhost.localdomain][DEBUG ]   Installing : 1:libcephfs1-10.2.7-0.el7.x86_64                            6/32 
+[localhost.localdomain][DEBUG ]   Installing : libicu-50.1.2-15.el7.x86_64                                 7/32 
+[localhost.localdomain][DEBUG ]   Installing : fcgi-2.4.0-25.el7.x86_64                                    8/32 
+[localhost.localdomain][DEBUG ]   Installing : 1:librgw2-10.2.7-0.el7.x86_64                               9/32 
+[localhost.localdomain][DEBUG ]   Installing : leveldb-1.12.0-11.el7.x86_64                               10/32 
+[localhost.localdomain][DEBUG ]   Installing : gdisk-0.8.6-5.el7.x86_64                                   11/32 
+[localhost.localdomain][DEBUG ]   Installing : boost-regex-1.53.0-26.el7.x86_64                           12/32 
+[localhost.localdomain][DEBUG ]   Installing : 1:python-cephfs-10.2.7-0.el7.x86_64                        13/32 
+[localhost.localdomain][DEBUG ]   Installing : 1:python-rbd-10.2.7-0.el7.x86_64                           14/32 
+[localhost.localdomain][DEBUG ]   Installing : 1:libradosstriper1-10.2.7-0.el7.x86_64                     15/32 
+[localhost.localdomain][DEBUG ]   Installing : python-werkzeug-0.9.1-2.el7.noarch                         16/32 
+[localhost.localdomain][DEBUG ]   Installing : cryptsetup-1.7.2-1.el7.x86_64                              17/32 
+[localhost.localdomain][DEBUG ]   Installing : python-itsdangerous-0.23-2.el7.noarch                      18/32 
+[localhost.localdomain][DEBUG ]   Installing : 1:python-flask-0.10.1-4.el7.noarch                         19/32 
+[localhost.localdomain][DEBUG ]   Installing : fuse-libs-2.9.2-7.el7.x86_64                               20/32 
+[localhost.localdomain][DEBUG ]   Installing : hdparm-9.43-5.el7.x86_64                                   21/32 
+[localhost.localdomain][DEBUG ]   Installing : libbabeltrace-1.2.4-3.el7.x86_64                           22/32 
+[localhost.localdomain][DEBUG ]   Installing : 1:ceph-common-10.2.7-0.el7.x86_64                          23/32 
+[localhost.localdomain][DEBUG ]   Installing : 1:ceph-selinux-10.2.7-0.el7.x86_64                         24/32 
+[localhost.localdomain][DEBUG ] Full path required for exclude: net:[4026532205].
+[localhost.localdomain][DEBUG ] Full path required for exclude: net:[4026532205].
+[localhost.localdomain][DEBUG ]   Installing : 1:ceph-base-10.2.7-0.el7.x86_64                            25/32 
+[localhost.localdomain][DEBUG ]   Installing : 1:ceph-osd-10.2.7-0.el7.x86_64                             26/32 
+[localhost.localdomain][DEBUG ]   Installing : 1:ceph-mon-10.2.7-0.el7.x86_64                             27/32 
+[localhost.localdomain][DEBUG ]   Installing : 1:ceph-mds-10.2.7-0.el7.x86_64                             28/32 
+[localhost.localdomain][DEBUG ]   Installing : 1:ceph-10.2.7-0.el7.x86_64                                 29/32 
+[localhost.localdomain][DEBUG ]   Installing : 1:ceph-radosgw-10.2.7-0.el7.x86_64                         30/32 
+[localhost.localdomain][DEBUG ]   Cleanup    : 1:librbd1-0.94.9-0.el7.x86_64                              31/32 
+[localhost.localdomain][DEBUG ]   Cleanup    : 1:librados2-0.94.9-0.el7.x86_64                            32/32 
+[localhost.localdomain][DEBUG ]   Verifying  : 1:ceph-common-10.2.7-0.el7.x86_64                           1/32 
+[localhost.localdomain][DEBUG ]   Verifying  : 1:python-flask-0.10.1-4.el7.noarch                          2/32 
+[localhost.localdomain][DEBUG ]   Verifying  : leveldb-1.12.0-11.el7.x86_64                                3/32 
+[localhost.localdomain][DEBUG ]   Verifying  : 1:libradosstriper1-10.2.7-0.el7.x86_64                      4/32 
+[localhost.localdomain][DEBUG ]   Verifying  : 1:python-rados-10.2.7-0.el7.x86_64                          5/32 
+[localhost.localdomain][DEBUG ]   Verifying  : 1:ceph-10.2.7-0.el7.x86_64                                  6/32 
+[localhost.localdomain][DEBUG ]   Verifying  : libbabeltrace-1.2.4-3.el7.x86_64                            7/32 
+[localhost.localdomain][DEBUG ]   Verifying  : hdparm-9.43-5.el7.x86_64                                    8/32 
+[localhost.localdomain][DEBUG ]   Verifying  : fuse-libs-2.9.2-7.el7.x86_64                                9/32 
+[localhost.localdomain][DEBUG ]   Verifying  : gdisk-0.8.6-5.el7.x86_64                                   10/32 
+[localhost.localdomain][DEBUG ]   Verifying  : python-itsdangerous-0.23-2.el7.noarch                      11/32 
+[localhost.localdomain][DEBUG ]   Verifying  : 1:ceph-selinux-10.2.7-0.el7.x86_64                         12/32 
+[localhost.localdomain][DEBUG ]   Verifying  : 1:libcephfs1-10.2.7-0.el7.x86_64                           13/32 
+[localhost.localdomain][DEBUG ]   Verifying  : 1:python-cephfs-10.2.7-0.el7.x86_64                        14/32 
+[localhost.localdomain][DEBUG ]   Verifying  : cryptsetup-1.7.2-1.el7.x86_64                              15/32 
+[localhost.localdomain][DEBUG ]   Verifying  : fcgi-2.4.0-25.el7.x86_64                                   16/32 
+[localhost.localdomain][DEBUG ]   Verifying  : 1:ceph-osd-10.2.7-0.el7.x86_64                             17/32 
+[localhost.localdomain][DEBUG ]   Verifying  : boost-regex-1.53.0-26.el7.x86_64                           18/32 
+[localhost.localdomain][DEBUG ]   Verifying  : python-werkzeug-0.9.1-2.el7.noarch                         19/32 
+[localhost.localdomain][DEBUG ]   Verifying  : 1:librbd1-10.2.7-0.el7.x86_64                              20/32 
+[localhost.localdomain][DEBUG ]   Verifying  : 1:ceph-radosgw-10.2.7-0.el7.x86_64                         21/32 
+[localhost.localdomain][DEBUG ]   Verifying  : 1:ceph-mon-10.2.7-0.el7.x86_64                             22/32 
+[localhost.localdomain][DEBUG ]   Verifying  : libicu-50.1.2-15.el7.x86_64                                23/32 
+[localhost.localdomain][DEBUG ]   Verifying  : 1:ceph-mds-10.2.7-0.el7.x86_64                             24/32 
+[localhost.localdomain][DEBUG ]   Verifying  : 1:librgw2-10.2.7-0.el7.x86_64                              25/32 
+[localhost.localdomain][DEBUG ]   Verifying  : 1:librados2-10.2.7-0.el7.x86_64                            26/32 
+[localhost.localdomain][DEBUG ]   Verifying  : 1:ceph-base-10.2.7-0.el7.x86_64                            27/32 
+[localhost.localdomain][DEBUG ]   Verifying  : boost-random-1.53.0-26.el7.x86_64                          28/32 
+[localhost.localdomain][DEBUG ]   Verifying  : boost-iostreams-1.53.0-26.el7.x86_64                       29/32 
+[localhost.localdomain][DEBUG ]   Verifying  : 1:python-rbd-10.2.7-0.el7.x86_64                           30/32 
+[localhost.localdomain][DEBUG ]   Verifying  : 1:librados2-0.94.9-0.el7.x86_64                            31/32 
+[localhost.localdomain][DEBUG ]   Verifying  : 1:librbd1-0.94.9-0.el7.x86_64                              32/32 
+[localhost.localdomain][DEBUG ] 
+[localhost.localdomain][DEBUG ] Installed:
+[localhost.localdomain][DEBUG ]   ceph.x86_64 1:10.2.7-0.el7         ceph-radosgw.x86_64 1:10.2.7-0.el7        
+[localhost.localdomain][DEBUG ] 
+[localhost.localdomain][DEBUG ] Dependency Installed:
+[localhost.localdomain][DEBUG ]   boost-iostreams.x86_64 0:1.53.0-26.el7   boost-random.x86_64 0:1.53.0-26.el7  
+[localhost.localdomain][DEBUG ]   boost-regex.x86_64 0:1.53.0-26.el7       ceph-base.x86_64 1:10.2.7-0.el7      
+[localhost.localdomain][DEBUG ]   ceph-common.x86_64 1:10.2.7-0.el7        ceph-mds.x86_64 1:10.2.7-0.el7       
+[localhost.localdomain][DEBUG ]   ceph-mon.x86_64 1:10.2.7-0.el7           ceph-osd.x86_64 1:10.2.7-0.el7       
+[localhost.localdomain][DEBUG ]   ceph-selinux.x86_64 1:10.2.7-0.el7       cryptsetup.x86_64 0:1.7.2-1.el7      
+[localhost.localdomain][DEBUG ]   fcgi.x86_64 0:2.4.0-25.el7               fuse-libs.x86_64 0:2.9.2-7.el7       
+[localhost.localdomain][DEBUG ]   gdisk.x86_64 0:0.8.6-5.el7               hdparm.x86_64 0:9.43-5.el7           
+[localhost.localdomain][DEBUG ]   leveldb.x86_64 0:1.12.0-11.el7           libbabeltrace.x86_64 0:1.2.4-3.el7   
+[localhost.localdomain][DEBUG ]   libcephfs1.x86_64 1:10.2.7-0.el7         libicu.x86_64 0:50.1.2-15.el7        
+[localhost.localdomain][DEBUG ]   libradosstriper1.x86_64 1:10.2.7-0.el7   librgw2.x86_64 1:10.2.7-0.el7        
+[localhost.localdomain][DEBUG ]   python-cephfs.x86_64 1:10.2.7-0.el7      python-flask.noarch 1:0.10.1-4.el7   
+[localhost.localdomain][DEBUG ]   python-itsdangerous.noarch 0:0.23-2.el7  python-rados.x86_64 1:10.2.7-0.el7   
+[localhost.localdomain][DEBUG ]   python-rbd.x86_64 1:10.2.7-0.el7         python-werkzeug.noarch 0:0.9.1-2.el7 
+[localhost.localdomain][DEBUG ] 
+[localhost.localdomain][DEBUG ] Dependency Updated:
+[localhost.localdomain][DEBUG ]   librados2.x86_64 1:10.2.7-0.el7         librbd1.x86_64 1:10.2.7-0.el7        
+[localhost.localdomain][DEBUG ] 
+[localhost.localdomain][DEBUG ] Complete!
+[localhost.localdomain][INFO  ] Running command: ceph --version
+[localhost.localdomain][DEBUG ] ceph version 10.2.7 (50e863e0f4bc8f4b9e31156de690d765af245185)
+[ceph_deploy.conf][DEBUG ] found configuration file at: /root/.cephdeploy.conf
+[ceph_deploy.cli][INFO  ] Invoked (1.5.38): /usr/bin/ceph-deploy --overwrite-conf mon create-initial
+[ceph_deploy.cli][INFO  ] ceph-deploy options:
+[ceph_deploy.cli][INFO  ]  username                      : None
+[ceph_deploy.cli][INFO  ]  verbose                       : False
+[ceph_deploy.cli][INFO  ]  overwrite_conf                : True
+[ceph_deploy.cli][INFO  ]  subcommand                    : create-initial
+[ceph_deploy.cli][INFO  ]  quiet                         : False
+[ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x2bf6c68>
+[ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[ceph_deploy.cli][INFO  ]  func                          : <function mon at 0x2f94140>
+[ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[ceph_deploy.cli][INFO  ]  default_release               : False
+[ceph_deploy.cli][INFO  ]  keyrings                      : None
+[ceph_deploy.mon][DEBUG ] Deploying mon, cluster ceph hosts localhost
+[ceph_deploy.mon][DEBUG ] detecting platform for host localhost ...
+[localhost][DEBUG ] connected to host: localhost 
+[localhost][DEBUG ] detect platform information from remote host
+[localhost][DEBUG ] detect machine type
+[localhost][DEBUG ] find the location of an executable
+[ceph_deploy.mon][INFO  ] distro info: CentOS Linux 7.3.1611 Core
+[localhost][DEBUG ] determining if provided host has same hostname in remote
+[localhost][DEBUG ] get remote short hostname
+[localhost][DEBUG ] deploying mon to localhost
+[localhost][DEBUG ] get remote short hostname
+[localhost][DEBUG ] remote hostname: localhost
+[localhost][DEBUG ] write cluster configuration to /etc/ceph/{cluster}.conf
+[localhost][DEBUG ] create the mon path if it does not exist
+[localhost][DEBUG ] checking for done path: /var/lib/ceph/mon/ceph-localhost/done
+[localhost][DEBUG ] done path does not exist: /var/lib/ceph/mon/ceph-localhost/done
+[localhost][INFO  ] creating keyring file: /var/lib/ceph/tmp/ceph-localhost.mon.keyring
+[localhost][DEBUG ] create the monitor keyring file
+[localhost][INFO  ] Running command: ceph-mon --cluster ceph --mkfs -i localhost --keyring /var/lib/ceph/tmp/ceph-localhost.mon.keyring --setuser 167 --setgroup 167
+[localhost][DEBUG ] ceph-mon: mon.noname-a 10.62.105.209:6789/0 is local, renaming to mon.localhost
+[localhost][DEBUG ] ceph-mon: set fsid to 575884e3-9c63-422b-a966-771de032385f
+[localhost][DEBUG ] ceph-mon: created monfs at /var/lib/ceph/mon/ceph-localhost for mon.localhost
+[localhost][INFO  ] unlinking keyring file /var/lib/ceph/tmp/ceph-localhost.mon.keyring
+[localhost][DEBUG ] create a done file to avoid re-doing the mon deployment
+[localhost][DEBUG ] create the init path if it does not exist
+[localhost][INFO  ] Running command: systemctl enable ceph.target
+[localhost][INFO  ] Running command: systemctl enable ceph-mon@localhost
+[localhost][WARNING] Created symlink from /etc/systemd/system/ceph-mon.target.wants/ceph-mon@localhost.service to /usr/lib/systemd/system/ceph-mon@.service.
+[localhost][INFO  ] Running command: systemctl start ceph-mon@localhost
+[localhost][INFO  ] Running command: ceph --cluster=ceph --admin-daemon /var/run/ceph/ceph-mon.localhost.asok mon_status
+[localhost][DEBUG ] ********************************************************************************
+[localhost][DEBUG ] status for monitor: mon.localhost
+[localhost][DEBUG ] {
+[localhost][DEBUG ]   "election_epoch": 3, 
+[localhost][DEBUG ]   "extra_probe_peers": [], 
+[localhost][DEBUG ]   "monmap": {
+[localhost][DEBUG ]     "created": "2017-06-16 03:56:13.945143", 
+[localhost][DEBUG ]     "epoch": 1, 
+[localhost][DEBUG ]     "fsid": "575884e3-9c63-422b-a966-771de032385f", 
+[localhost][DEBUG ]     "modified": "2017-06-16 03:56:13.945143", 
+[localhost][DEBUG ]     "mons": [
+[localhost][DEBUG ]       {
+[localhost][DEBUG ]         "addr": "10.62.105.209:6789/0", 
+[localhost][DEBUG ]         "name": "localhost", 
+[localhost][DEBUG ]         "rank": 0
+[localhost][DEBUG ]       }
+[localhost][DEBUG ]     ]
+[localhost][DEBUG ]   }, 
+[localhost][DEBUG ]   "name": "localhost", 
+[localhost][DEBUG ]   "outside_quorum": [], 
+[localhost][DEBUG ]   "quorum": [
+[localhost][DEBUG ]     0
+[localhost][DEBUG ]   ], 
+[localhost][DEBUG ]   "rank": 0, 
+[localhost][DEBUG ]   "state": "leader", 
+[localhost][DEBUG ]   "sync_provider": []
+[localhost][DEBUG ] }
+[localhost][DEBUG ] ********************************************************************************
+[localhost][INFO  ] monitor: mon.localhost is running
+[localhost][INFO  ] Running command: ceph --cluster=ceph --admin-daemon /var/run/ceph/ceph-mon.localhost.asok mon_status
+[ceph_deploy.mon][INFO  ] processing monitor mon.localhost
+[localhost][DEBUG ] connected to host: localhost 
+[localhost][DEBUG ] detect platform information from remote host
+[localhost][DEBUG ] detect machine type
+[localhost][DEBUG ] find the location of an executable
+[localhost][INFO  ] Running command: ceph --cluster=ceph --admin-daemon /var/run/ceph/ceph-mon.localhost.asok mon_status
+[ceph_deploy.mon][INFO  ] mon.localhost monitor has reached quorum!
+[ceph_deploy.mon][INFO  ] all initial monitors are running and have formed quorum
+[ceph_deploy.mon][INFO  ] Running gatherkeys...
+[ceph_deploy.gatherkeys][INFO  ] Storing keys in temp directory /tmp/tmpLYxcoO
+[localhost][DEBUG ] connected to host: localhost 
+[localhost][DEBUG ] detect platform information from remote host
+[localhost][DEBUG ] detect machine type
+[localhost][DEBUG ] get remote short hostname
+[localhost][DEBUG ] fetch remote file
+[localhost][INFO  ] Running command: /usr/bin/ceph --connect-timeout=25 --cluster=ceph --admin-daemon=/var/run/ceph/ceph-mon.localhost.asok mon_status
+[localhost][INFO  ] Running command: /usr/bin/ceph --connect-timeout=25 --cluster=ceph --name mon. --keyring=/var/lib/ceph/mon/ceph-localhost/keyring auth get client.admin
+[localhost][INFO  ] Running command: /usr/bin/ceph --connect-timeout=25 --cluster=ceph --name mon. --keyring=/var/lib/ceph/mon/ceph-localhost/keyring auth get client.bootstrap-mds
+[localhost][INFO  ] Running command: /usr/bin/ceph --connect-timeout=25 --cluster=ceph --name mon. --keyring=/var/lib/ceph/mon/ceph-localhost/keyring auth get client.bootstrap-mgr
+[localhost][INFO  ] Running command: /usr/bin/ceph --connect-timeout=25 --cluster=ceph --name mon. --keyring=/var/lib/ceph/mon/ceph-localhost/keyring auth get-or-create client.bootstrap-mgr mon allow profile bootstrap-mgr
+[localhost][INFO  ] Running command: /usr/bin/ceph --connect-timeout=25 --cluster=ceph --name mon. --keyring=/var/lib/ceph/mon/ceph-localhost/keyring auth get client.bootstrap-osd
+[localhost][INFO  ] Running command: /usr/bin/ceph --connect-timeout=25 --cluster=ceph --name mon. --keyring=/var/lib/ceph/mon/ceph-localhost/keyring auth get client.bootstrap-rgw
+[ceph_deploy.gatherkeys][INFO  ] Storing ceph.client.admin.keyring
+[ceph_deploy.gatherkeys][INFO  ] Storing ceph.bootstrap-mds.keyring
+[ceph_deploy.gatherkeys][INFO  ] Storing ceph.bootstrap-mgr.keyring
+[ceph_deploy.gatherkeys][INFO  ] keyring 'ceph.mon.keyring' already exists
+[ceph_deploy.gatherkeys][INFO  ] Storing ceph.bootstrap-osd.keyring
+[ceph_deploy.gatherkeys][INFO  ] Storing ceph.bootstrap-rgw.keyring
+[ceph_deploy.gatherkeys][INFO  ] Destroy temp directory /tmp/tmpLYxcoO
+[ceph_deploy.conf][DEBUG ] found configuration file at: /root/.cephdeploy.conf
+[ceph_deploy.cli][INFO  ] Invoked (1.5.38): /usr/bin/ceph-deploy --overwrite-conf osd prepare localhost.localdomain:/var/local/osd
+[ceph_deploy.cli][INFO  ] ceph-deploy options:
+[ceph_deploy.cli][INFO  ]  username                      : None
+[ceph_deploy.cli][INFO  ]  block_db                      : None
+[ceph_deploy.cli][INFO  ]  disk                          : [('localhost.localdomain', '/var/local/osd', None)]
+[ceph_deploy.cli][INFO  ]  dmcrypt                       : False
+[ceph_deploy.cli][INFO  ]  verbose                       : False
+[ceph_deploy.cli][INFO  ]  bluestore                     : None
+[ceph_deploy.cli][INFO  ]  block_wal                     : None
+[ceph_deploy.cli][INFO  ]  overwrite_conf                : True
+[ceph_deploy.cli][INFO  ]  subcommand                    : prepare
+[ceph_deploy.cli][INFO  ]  dmcrypt_key_dir               : /etc/ceph/dmcrypt-keys
+[ceph_deploy.cli][INFO  ]  quiet                         : False
+[ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x10e1680>
+[ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[ceph_deploy.cli][INFO  ]  fs_type                       : xfs
+[ceph_deploy.cli][INFO  ]  func                          : <function osd at 0x15800c8>
+[ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[ceph_deploy.cli][INFO  ]  default_release               : False
+[ceph_deploy.cli][INFO  ]  zap_disk                      : False
+[ceph_deploy.osd][DEBUG ] Preparing cluster ceph disks localhost.localdomain:/var/local/osd:
+[localhost.localdomain][DEBUG ] connected to host: localhost.localdomain 
+[localhost.localdomain][DEBUG ] detect platform information from remote host
+[localhost.localdomain][DEBUG ] detect machine type
+[localhost.localdomain][DEBUG ] find the location of an executable
+[ceph_deploy.osd][INFO  ] Distro info: CentOS Linux 7.3.1611 Core
+[ceph_deploy.osd][DEBUG ] Deploying osd to localhost.localdomain
+[localhost.localdomain][DEBUG ] write cluster configuration to /etc/ceph/{cluster}.conf
+[ceph_deploy.osd][DEBUG ] Preparing host localhost.localdomain disk /var/local/osd journal None activate False
+[localhost.localdomain][DEBUG ] find the location of an executable
+[localhost.localdomain][INFO  ] Running command: /usr/sbin/ceph-disk -v prepare --cluster ceph --fs-type xfs -- /var/local/osd
+[localhost.localdomain][WARNING] command: Running command: /usr/bin/ceph-osd --cluster=ceph --show-config-value=fsid
+[localhost.localdomain][WARNING] command: Running command: /usr/bin/ceph-osd --check-allows-journal -i 0 --cluster ceph --setuser ceph --setgroup ceph
+[localhost.localdomain][WARNING] command: Running command: /usr/bin/ceph-osd --check-wants-journal -i 0 --cluster ceph --setuser ceph --setgroup ceph
+[localhost.localdomain][WARNING] command: Running command: /usr/bin/ceph-osd --check-needs-journal -i 0 --cluster ceph --setuser ceph --setgroup ceph
+[localhost.localdomain][WARNING] command: Running command: /usr/bin/ceph-osd --cluster=ceph --show-config-value=osd_journal_size
+[localhost.localdomain][WARNING] populate_data_path: Preparing osd data dir /var/local/osd
+[localhost.localdomain][WARNING] command: Running command: /usr/sbin/restorecon -R /var/local/osd/ceph_fsid.24155.tmp
+[localhost.localdomain][WARNING] command: Running command: /usr/bin/chown -R ceph:ceph /var/local/osd/ceph_fsid.24155.tmp
+[localhost.localdomain][WARNING] command: Running command: /usr/sbin/restorecon -R /var/local/osd/fsid.24155.tmp
+[localhost.localdomain][WARNING] command: Running command: /usr/bin/chown -R ceph:ceph /var/local/osd/fsid.24155.tmp
+[localhost.localdomain][WARNING] command: Running command: /usr/sbin/restorecon -R /var/local/osd/magic.24155.tmp
+[localhost.localdomain][WARNING] command: Running command: /usr/bin/chown -R ceph:ceph /var/local/osd/magic.24155.tmp
+[localhost.localdomain][INFO  ] checking OSD status...
+[localhost.localdomain][DEBUG ] find the location of an executable
+[localhost.localdomain][INFO  ] Running command: /bin/ceph --cluster=ceph osd stat --format=json
+[ceph_deploy.osd][DEBUG ] Host localhost.localdomain is now ready for osd use.
+[ceph_deploy.conf][DEBUG ] found configuration file at: /root/.cephdeploy.conf
+[ceph_deploy.cli][INFO  ] Invoked (1.5.38): /usr/bin/ceph-deploy osd activate localhost.localdomain:/var/local/osd
+[ceph_deploy.cli][INFO  ] ceph-deploy options:
+[ceph_deploy.cli][INFO  ]  username                      : None
+[ceph_deploy.cli][INFO  ]  verbose                       : False
+[ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[ceph_deploy.cli][INFO  ]  subcommand                    : activate
+[ceph_deploy.cli][INFO  ]  quiet                         : False
+[ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x293ef80>
+[ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[ceph_deploy.cli][INFO  ]  func                          : <function osd at 0x2bf70c8>
+[ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[ceph_deploy.cli][INFO  ]  default_release               : False
+[ceph_deploy.cli][INFO  ]  disk                          : [('localhost.localdomain', '/var/local/osd', None)]
+[ceph_deploy.osd][DEBUG ] Activating cluster ceph disks localhost.localdomain:/var/local/osd:
+[localhost.localdomain][DEBUG ] connected to host: localhost.localdomain 
+[localhost.localdomain][DEBUG ] detect platform information from remote host
+[localhost.localdomain][DEBUG ] detect machine type
+[localhost.localdomain][DEBUG ] find the location of an executable
+[ceph_deploy.osd][INFO  ] Distro info: CentOS Linux 7.3.1611 Core
+[ceph_deploy.osd][DEBUG ] activating host localhost.localdomain disk /var/local/osd
+[ceph_deploy.osd][DEBUG ] will use init type: systemd
+[localhost.localdomain][DEBUG ] find the location of an executable
+[localhost.localdomain][INFO  ] Running command: /usr/sbin/ceph-disk -v activate --mark-init systemd --mount /var/local/osd
+[localhost.localdomain][WARNING] main_activate: path = /var/local/osd
+[localhost.localdomain][WARNING] activate: Cluster uuid is 575884e3-9c63-422b-a966-771de032385f
+[localhost.localdomain][WARNING] command: Running command: /usr/bin/ceph-osd --cluster=ceph --show-config-value=fsid
+[localhost.localdomain][WARNING] activate: Cluster name is ceph
+[localhost.localdomain][WARNING] activate: OSD uuid is 6ac55d30-c3f3-4740-89b2-d417e3128ded
+[localhost.localdomain][WARNING] allocate_osd_id: Allocating OSD id...
+[localhost.localdomain][WARNING] command: Running command: /usr/bin/ceph --cluster ceph --name client.bootstrap-osd --keyring /var/lib/ceph/bootstrap-osd/ceph.keyring osd create --concise 6ac55d30-c3f3-4740-89b2-d417e3128ded
+[localhost.localdomain][WARNING] command: Running command: /usr/sbin/restorecon -R /var/local/osd/whoami.24236.tmp
+[localhost.localdomain][WARNING] command: Running command: /usr/bin/chown -R ceph:ceph /var/local/osd/whoami.24236.tmp
+[localhost.localdomain][WARNING] activate: OSD id is 0
+[localhost.localdomain][WARNING] activate: Initializing OSD...
+[localhost.localdomain][WARNING] command_check_call: Running command: /usr/bin/ceph --cluster ceph --name client.bootstrap-osd --keyring /var/lib/ceph/bootstrap-osd/ceph.keyring mon getmap -o /var/local/osd/activate.monmap
+[localhost.localdomain][WARNING] got monmap epoch 1
+[localhost.localdomain][WARNING] command: Running command: /usr/bin/timeout 300 ceph-osd --cluster ceph --mkfs --mkkey -i 0 --monmap /var/local/osd/activate.monmap --osd-data /var/local/osd --osd-journal /var/local/osd/journal --osd-uuid 6ac55d30-c3f3-4740-89b2-d417e3128ded --keyring /var/local/osd/keyring --setuser ceph --setgroup ceph
+[localhost.localdomain][WARNING] activate: Marking with init system systemd
+[localhost.localdomain][WARNING] command: Running command: /usr/sbin/restorecon -R /var/local/osd/systemd
+[localhost.localdomain][WARNING] command: Running command: /usr/bin/chown -R ceph:ceph /var/local/osd/systemd
+[localhost.localdomain][WARNING] activate: Authorizing OSD key...
+[localhost.localdomain][WARNING] command_check_call: Running command: /usr/bin/ceph --cluster ceph --name client.bootstrap-osd --keyring /var/lib/ceph/bootstrap-osd/ceph.keyring auth add osd.0 -i /var/local/osd/keyring osd allow * mon allow profile osd
+[localhost.localdomain][WARNING] added key for osd.0
+[localhost.localdomain][WARNING] command: Running command: /usr/sbin/restorecon -R /var/local/osd/active.24236.tmp
+[localhost.localdomain][WARNING] command: Running command: /usr/bin/chown -R ceph:ceph /var/local/osd/active.24236.tmp
+[localhost.localdomain][WARNING] activate: ceph osd.0 data dir is ready at /var/local/osd
+[localhost.localdomain][WARNING] activate_dir: Creating symlink /var/lib/ceph/osd/ceph-0 -> /var/local/osd
+[localhost.localdomain][WARNING] start_daemon: Starting ceph osd.0...
+[localhost.localdomain][WARNING] command_check_call: Running command: /usr/bin/systemctl disable ceph-osd@0
+[localhost.localdomain][WARNING] command_check_call: Running command: /usr/bin/systemctl enable --runtime ceph-osd@0
+[localhost.localdomain][WARNING] Created symlink from /run/systemd/system/ceph-osd.target.wants/ceph-osd@0.service to /usr/lib/systemd/system/ceph-osd@.service.
+[localhost.localdomain][WARNING] command_check_call: Running command: /usr/bin/systemctl start ceph-osd@0
+[localhost.localdomain][INFO  ] checking OSD status...
+[localhost.localdomain][DEBUG ] find the location of an executable
+[localhost.localdomain][INFO  ] Running command: /bin/ceph --cluster=ceph osd stat --format=json
+[localhost.localdomain][INFO  ] Running command: systemctl enable ceph.target
+[ceph_deploy.conf][DEBUG ] found configuration file at: /root/.cephdeploy.conf
+[ceph_deploy.cli][INFO  ] Invoked (1.5.38): /usr/bin/ceph-deploy mds create localhost.localdomain
+[ceph_deploy.cli][INFO  ] ceph-deploy options:
+[ceph_deploy.cli][INFO  ]  username                      : None
+[ceph_deploy.cli][INFO  ]  verbose                       : False
+[ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[ceph_deploy.cli][INFO  ]  subcommand                    : create
+[ceph_deploy.cli][INFO  ]  quiet                         : False
+[ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x1a52560>
+[ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[ceph_deploy.cli][INFO  ]  func                          : <function mds at 0x1d81500>
+[ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[ceph_deploy.cli][INFO  ]  mds                           : [('localhost.localdomain', 'localhost.localdomain')]
+[ceph_deploy.cli][INFO  ]  default_release               : False
+[ceph_deploy.mds][DEBUG ] Deploying mds, cluster ceph hosts localhost.localdomain:localhost.localdomain
+[localhost.localdomain][DEBUG ] connected to host: localhost.localdomain 
+[localhost.localdomain][DEBUG ] detect platform information from remote host
+[localhost.localdomain][DEBUG ] detect machine type
+[ceph_deploy.mds][INFO  ] Distro info: CentOS Linux 7.3.1611 Core
+[ceph_deploy.mds][DEBUG ] remote host will use systemd
+[ceph_deploy.mds][DEBUG ] deploying mds bootstrap to localhost.localdomain
+[localhost.localdomain][DEBUG ] write cluster configuration to /etc/ceph/{cluster}.conf
+[localhost.localdomain][DEBUG ] create path if it doesn't exist
+[localhost.localdomain][INFO  ] Running command: ceph --cluster ceph --name client.bootstrap-mds --keyring /var/lib/ceph/bootstrap-mds/ceph.keyring auth get-or-create mds.localhost.localdomain osd allow rwx mds allow mon allow profile mds -o /var/lib/ceph/mds/ceph-localhost.localdomain/keyring
+[localhost.localdomain][INFO  ] Running command: systemctl enable ceph-mds@localhost.localdomain
+[localhost.localdomain][WARNING] Created symlink from /etc/systemd/system/ceph-mds.target.wants/ceph-mds@localhost.localdomain.service to /usr/lib/systemd/system/ceph-mds@.service.
+[localhost.localdomain][INFO  ] Running command: systemctl start ceph-mds@localhost.localdomain
+[localhost.localdomain][INFO  ] Running command: systemctl enable ceph.target
+[ceph_deploy.conf][DEBUG ] found configuration file at: /root/.cephdeploy.conf
+[ceph_deploy.cli][INFO  ] Invoked (1.5.38): /usr/bin/ceph-deploy admin localhost.localdomain
+[ceph_deploy.cli][INFO  ] ceph-deploy options:
+[ceph_deploy.cli][INFO  ]  username                      : None
+[ceph_deploy.cli][INFO  ]  verbose                       : False
+[ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[ceph_deploy.cli][INFO  ]  quiet                         : False
+[ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x193dd40>
+[ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[ceph_deploy.cli][INFO  ]  client                        : ['localhost.localdomain']
+[ceph_deploy.cli][INFO  ]  func                          : <function admin at 0x1be0c08>
+[ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[ceph_deploy.cli][INFO  ]  default_release               : False
+[ceph_deploy.admin][DEBUG ] Pushing admin keys and conf to localhost.localdomain
+[localhost.localdomain][DEBUG ] connected to host: localhost.localdomain 
+[localhost.localdomain][DEBUG ] detect platform information from remote host
+[localhost.localdomain][DEBUG ] detect machine type
+[localhost.localdomain][DEBUG ] write cluster configuration to /etc/ceph/{cluster}.conf
+Start kube::util::setup_cinder
+pool 'cinder' created
+[client.cinder]
+	key = AQA6j0NZmDpmDBAA3xzGcHdoRJnbhr3YUjoGMQ==
+[client.cinder]
+	key = AQA6j0NZmDpmDBAA3xzGcHdoRJnbhr3YUjoGMQ==
+Restarting openstack-cinder-api.service ...
+Restarting openstack-cinder-scheduler.service ...
+Restarting openstack-cinder-volume.service ...
+Restarting openstack-losetup.service ...
+Start kube::util::setup_kubestack
+Cloning into '/gopath/src/github.com/hyperhq/kubestack'...
+go build kubestack.go
+cp -f kubestack /usr/local/bin/
+Created symlink from /etc/systemd/system/multi-user.target.wants/kubestack.service to /usr/lib/systemd/system/kubestack.service.
+Start kube::util::setup_hyperd
+Loaded plugins: fastestmirror, priorities
+Loading mirror speeds from cached hostfile
+ * base: mirrors.163.com
+ * epel: ftp.jaist.ac.jp
+ * extras: mirrors.163.com
+ * updates: mirrors.163.com
+72 packages excluded due to repository priority protections
+Resolving Dependencies
+--> Running transaction check
+---> Package libvirt.x86_64 0:2.0.0-10.el7_3.9 will be installed
+--> Processing Dependency: libvirt-daemon-driver-storage = 2.0.0-10.el7_3.9 for package: libvirt-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: libvirt-daemon-driver-secret = 2.0.0-10.el7_3.9 for package: libvirt-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: libvirt-daemon-driver-qemu = 2.0.0-10.el7_3.9 for package: libvirt-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: libvirt-daemon-driver-nwfilter = 2.0.0-10.el7_3.9 for package: libvirt-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: libvirt-daemon-driver-nodedev = 2.0.0-10.el7_3.9 for package: libvirt-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: libvirt-daemon-driver-network = 2.0.0-10.el7_3.9 for package: libvirt-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: libvirt-daemon-driver-lxc = 2.0.0-10.el7_3.9 for package: libvirt-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: libvirt-daemon-driver-interface = 2.0.0-10.el7_3.9 for package: libvirt-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: libvirt-daemon-config-nwfilter = 2.0.0-10.el7_3.9 for package: libvirt-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: libvirt-daemon-config-network = 2.0.0-10.el7_3.9 for package: libvirt-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: libvirt-daemon = 2.0.0-10.el7_3.9 for package: libvirt-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: libvirt-client = 2.0.0-10.el7_3.9 for package: libvirt-2.0.0-10.el7_3.9.x86_64
+--> Running transaction check
+---> Package libvirt-client.x86_64 0:2.0.0-10.el7_3.9 will be installed
+--> Processing Dependency: gnutls-utils for package: libvirt-client-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: cyrus-sasl-md5 for package: libvirt-client-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: cyrus-sasl for package: libvirt-client-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: libyajl.so.2()(64bit) for package: libvirt-client-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: libavahi-common.so.3()(64bit) for package: libvirt-client-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: libavahi-client.so.3()(64bit) for package: libvirt-client-2.0.0-10.el7_3.9.x86_64
+---> Package libvirt-daemon.x86_64 0:2.0.0-10.el7_3.9 will be installed
+--> Processing Dependency: numad for package: libvirt-daemon-2.0.0-10.el7_3.9.x86_64
+---> Package libvirt-daemon-config-network.x86_64 0:2.0.0-10.el7_3.9 will be installed
+---> Package libvirt-daemon-config-nwfilter.x86_64 0:2.0.0-10.el7_3.9 will be installed
+---> Package libvirt-daemon-driver-interface.x86_64 0:2.0.0-10.el7_3.9 will be installed
+--> Processing Dependency: netcf-libs >= 0.2.2 for package: libvirt-daemon-driver-interface-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: libnetcf.so.1(NETCF_1.4.0)(64bit) for package: libvirt-daemon-driver-interface-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: libnetcf.so.1(NETCF_1.3.0)(64bit) for package: libvirt-daemon-driver-interface-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: libnetcf.so.1(NETCF_1.2.0)(64bit) for package: libvirt-daemon-driver-interface-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: libnetcf.so.1(NETCF_1.0.0)(64bit) for package: libvirt-daemon-driver-interface-2.0.0-10.el7_3.9.x86_64
+--> Processing Dependency: libnetcf.so.1()(64bit) for package: libvirt-daemon-driver-interface-2.0.0-10.el7_3.9.x86_64
+---> Package libvirt-daemon-driver-lxc.x86_64 0:2.0.0-10.el7_3.9 will be installed
+---> Package libvirt-daemon-driver-network.x86_64 0:2.0.0-10.el7_3.9 will be installed
+---> Package libvirt-daemon-driver-nodedev.x86_64 0:2.0.0-10.el7_3.9 will be installed
+---> Package libvirt-daemon-driver-nwfilter.x86_64 0:2.0.0-10.el7_3.9 will be installed
+---> Package libvirt-daemon-driver-qemu.x86_64 0:2.0.0-10.el7_3.9 will be installed
+--> Processing Dependency: lzop for package: libvirt-daemon-driver-qemu-2.0.0-10.el7_3.9.x86_64
+---> Package libvirt-daemon-driver-secret.x86_64 0:2.0.0-10.el7_3.9 will be installed
+---> Package libvirt-daemon-driver-storage.x86_64 0:2.0.0-10.el7_3.9 will be installed
+--> Processing Dependency: nfs-utils for package: libvirt-daemon-driver-storage-2.0.0-10.el7_3.9.x86_64
+--> Running transaction check
+---> Package avahi-libs.x86_64 0:0.6.31-17.el7 will be installed
+---> Package cyrus-sasl.x86_64 0:2.1.26-20.el7_2 will be installed
+---> Package cyrus-sasl-md5.x86_64 0:2.1.26-20.el7_2 will be installed
+---> Package gnutls-utils.x86_64 0:3.3.24-1.el7 will be installed
+--> Processing Dependency: gnutls-dane(x86-64) = 3.3.24-1.el7 for package: gnutls-utils-3.3.24-1.el7.x86_64
+--> Processing Dependency: libgnutls-dane.so.0(DANE_0_0)(64bit) for package: gnutls-utils-3.3.24-1.el7.x86_64
+--> Processing Dependency: libunbound.so.2()(64bit) for package: gnutls-utils-3.3.24-1.el7.x86_64
+--> Processing Dependency: libopts.so.25()(64bit) for package: gnutls-utils-3.3.24-1.el7.x86_64
+--> Processing Dependency: libgnutls-dane.so.0()(64bit) for package: gnutls-utils-3.3.24-1.el7.x86_64
+---> Package lzop.x86_64 0:1.03-10.el7 will be installed
+---> Package netcf-libs.x86_64 0:0.2.8-2.el7 will be installed
+--> Processing Dependency: bridge-utils for package: netcf-libs-0.2.8-2.el7.x86_64
+---> Package nfs-utils.x86_64 1:1.3.0-0.33.el7_3 will be installed
+--> Processing Dependency: libtirpc >= 0.2.4-0.7 for package: 1:nfs-utils-1.3.0-0.33.el7_3.x86_64
+--> Processing Dependency: gssproxy >= 0.3.0-0 for package: 1:nfs-utils-1.3.0-0.33.el7_3.x86_64
+--> Processing Dependency: rpcbind for package: 1:nfs-utils-1.3.0-0.33.el7_3.x86_64
+--> Processing Dependency: quota for package: 1:nfs-utils-1.3.0-0.33.el7_3.x86_64
+--> Processing Dependency: libnfsidmap for package: 1:nfs-utils-1.3.0-0.33.el7_3.x86_64
+--> Processing Dependency: keyutils for package: 1:nfs-utils-1.3.0-0.33.el7_3.x86_64
+--> Processing Dependency: libtirpc.so.1()(64bit) for package: 1:nfs-utils-1.3.0-0.33.el7_3.x86_64
+--> Processing Dependency: libnfsidmap.so.0()(64bit) for package: 1:nfs-utils-1.3.0-0.33.el7_3.x86_64
+---> Package numad.x86_64 0:0.5-17.20150602git.el7 will be installed
+---> Package yajl.x86_64 0:2.0.4-4.el7 will be installed
+--> Running transaction check
+---> Package autogen-libopts.x86_64 0:5.18-5.el7 will be installed
+---> Package bridge-utils.x86_64 0:1.5-9.el7 will be installed
+---> Package gnutls-dane.x86_64 0:3.3.24-1.el7 will be installed
+---> Package gssproxy.x86_64 0:0.4.1-13.el7 will be installed
+--> Processing Dependency: libverto-tevent for package: gssproxy-0.4.1-13.el7.x86_64
+--> Processing Dependency: libini_config.so.3(INI_CONFIG_1.1.0)(64bit) for package: gssproxy-0.4.1-13.el7.x86_64
+--> Processing Dependency: libref_array.so.1()(64bit) for package: gssproxy-0.4.1-13.el7.x86_64
+--> Processing Dependency: libini_config.so.3()(64bit) for package: gssproxy-0.4.1-13.el7.x86_64
+--> Processing Dependency: libcollection.so.2()(64bit) for package: gssproxy-0.4.1-13.el7.x86_64
+--> Processing Dependency: libbasicobjects.so.0()(64bit) for package: gssproxy-0.4.1-13.el7.x86_64
+---> Package keyutils.x86_64 0:1.5.8-3.el7 will be installed
+---> Package libnfsidmap.x86_64 0:0.25-15.el7 will be installed
+---> Package libtirpc.x86_64 0:0.2.4-0.8.el7_3 will be installed
+---> Package quota.x86_64 1:4.01-14.el7 will be installed
+--> Processing Dependency: quota-nls = 1:4.01-14.el7 for package: 1:quota-4.01-14.el7.x86_64
+--> Processing Dependency: tcp_wrappers for package: 1:quota-4.01-14.el7.x86_64
+---> Package rpcbind.x86_64 0:0.2.0-38.el7_3.1 will be installed
+---> Package unbound-libs.x86_64 0:1.4.20-28.el7 will be installed
+--> Processing Dependency: libldns.so.1()(64bit) for package: unbound-libs-1.4.20-28.el7.x86_64
+--> Running transaction check
+---> Package ldns.x86_64 0:1.6.16-10.el7 will be installed
+---> Package libbasicobjects.x86_64 0:0.1.1-27.el7 will be installed
+---> Package libcollection.x86_64 0:0.6.2-27.el7 will be installed
+---> Package libini_config.x86_64 0:1.3.0-27.el7 will be installed
+--> Processing Dependency: libpath_utils.so.1(PATH_UTILS_0.2.1)(64bit) for package: libini_config-1.3.0-27.el7.x86_64
+--> Processing Dependency: libpath_utils.so.1()(64bit) for package: libini_config-1.3.0-27.el7.x86_64
+---> Package libref_array.x86_64 0:0.1.5-27.el7 will be installed
+---> Package libverto-tevent.x86_64 0:0.2.5-4.el7 will be installed
+--> Processing Dependency: libtevent.so.0(TEVENT_0.9.9)(64bit) for package: libverto-tevent-0.2.5-4.el7.x86_64
+--> Processing Dependency: libtalloc.so.2(TALLOC_2.0.2)(64bit) for package: libverto-tevent-0.2.5-4.el7.x86_64
+--> Processing Dependency: libtevent.so.0()(64bit) for package: libverto-tevent-0.2.5-4.el7.x86_64
+--> Processing Dependency: libtalloc.so.2()(64bit) for package: libverto-tevent-0.2.5-4.el7.x86_64
+---> Package quota-nls.noarch 1:4.01-14.el7 will be installed
+---> Package tcp_wrappers.x86_64 0:7.6-77.el7 will be installed
+--> Running transaction check
+---> Package libpath_utils.x86_64 0:0.2.1-27.el7 will be installed
+---> Package libtalloc.x86_64 0:2.1.6-1.el7 will be installed
+---> Package libtevent.x86_64 0:0.9.28-1.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                         Arch   Version                   Repository
+                                                                           Size
+================================================================================
+Installing:
+ libvirt                         x86_64 2.0.0-10.el7_3.9          updates 142 k
+Installing for dependencies:
+ autogen-libopts                 x86_64 5.18-5.el7                base     66 k
+ avahi-libs                      x86_64 0.6.31-17.el7             base     61 k
+ bridge-utils                    x86_64 1.5-9.el7                 base     32 k
+ cyrus-sasl                      x86_64 2.1.26-20.el7_2           base     88 k
+ cyrus-sasl-md5                  x86_64 2.1.26-20.el7_2           base     56 k
+ gnutls-dane                     x86_64 3.3.24-1.el7              base     33 k
+ gnutls-utils                    x86_64 3.3.24-1.el7              base    233 k
+ gssproxy                        x86_64 0.4.1-13.el7              base     87 k
+ keyutils                        x86_64 1.5.8-3.el7               base     54 k
+ ldns                            x86_64 1.6.16-10.el7             base    476 k
+ libbasicobjects                 x86_64 0.1.1-27.el7              base     25 k
+ libcollection                   x86_64 0.6.2-27.el7              base     41 k
+ libini_config                   x86_64 1.3.0-27.el7              base     63 k
+ libnfsidmap                     x86_64 0.25-15.el7               base     47 k
+ libpath_utils                   x86_64 0.2.1-27.el7              base     27 k
+ libref_array                    x86_64 0.1.5-27.el7              base     26 k
+ libtalloc                       x86_64 2.1.6-1.el7               base     34 k
+ libtevent                       x86_64 0.9.28-1.el7              base     34 k
+ libtirpc                        x86_64 0.2.4-0.8.el7_3           updates  88 k
+ libverto-tevent                 x86_64 0.2.5-4.el7               base    9.0 k
+ libvirt-client                  x86_64 2.0.0-10.el7_3.9          updates 4.3 M
+ libvirt-daemon                  x86_64 2.0.0-10.el7_3.9          updates 725 k
+ libvirt-daemon-config-network   x86_64 2.0.0-10.el7_3.9          updates 143 k
+ libvirt-daemon-config-nwfilter  x86_64 2.0.0-10.el7_3.9          updates 145 k
+ libvirt-daemon-driver-interface x86_64 2.0.0-10.el7_3.9          updates 186 k
+ libvirt-daemon-driver-lxc       x86_64 2.0.0-10.el7_3.9          updates 810 k
+ libvirt-daemon-driver-network   x86_64 2.0.0-10.el7_3.9          updates 341 k
+ libvirt-daemon-driver-nodedev   x86_64 2.0.0-10.el7_3.9          updates 185 k
+ libvirt-daemon-driver-nwfilter  x86_64 2.0.0-10.el7_3.9          updates 209 k
+ libvirt-daemon-driver-qemu      x86_64 2.0.0-10.el7_3.9          updates 621 k
+ libvirt-daemon-driver-secret    x86_64 2.0.0-10.el7_3.9          updates 175 k
+ libvirt-daemon-driver-storage   x86_64 2.0.0-10.el7_3.9          updates 379 k
+ lzop                            x86_64 1.03-10.el7               base     54 k
+ netcf-libs                      x86_64 0.2.8-2.el7               base     70 k
+ nfs-utils                       x86_64 1:1.3.0-0.33.el7_3        updates 377 k
+ numad                           x86_64 0.5-17.20150602git.el7    base     35 k
+ quota                           x86_64 1:4.01-14.el7             base    179 k
+ quota-nls                       noarch 1:4.01-14.el7             base     90 k
+ rpcbind                         x86_64 0.2.0-38.el7_3.1          updates  59 k
+ tcp_wrappers                    x86_64 7.6-77.el7                base     78 k
+ unbound-libs                    x86_64 1.4.20-28.el7             base    296 k
+ yajl                            x86_64 2.0.4-4.el7               base     39 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+42 Dependent packages)
+
+Total download size: 11 M
+Installed size: 37 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              5.5 MB/s |  11 MB  00:02     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : yajl-2.0.4-4.el7.x86_64                                     1/43 
+  Installing : avahi-libs-0.6.31-17.el7.x86_64                             2/43 
+  Installing : libtirpc-0.2.4-0.8.el7_3.x86_64                             3/43 
+  Installing : rpcbind-0.2.0-38.el7_3.1.x86_64                             4/43 
+  Installing : libcollection-0.6.2-27.el7.x86_64                           5/43 
+  Installing : libref_array-0.1.5-27.el7.x86_64                            6/43 
+  Installing : libbasicobjects-0.1.1-27.el7.x86_64                         7/43 
+  Installing : libtalloc-2.1.6-1.el7.x86_64                                8/43 
+  Installing : libtevent-0.9.28-1.el7.x86_64                               9/43 
+  Installing : libverto-tevent-0.2.5-4.el7.x86_64                         10/43 
+  Installing : libpath_utils-0.2.1-27.el7.x86_64                          11/43 
+  Installing : libini_config-1.3.0-27.el7.x86_64                          12/43 
+  Installing : gssproxy-0.4.1-13.el7.x86_64                               13/43 
+  Installing : numad-0.5-17.20150602git.el7.x86_64                        14/43 
+  Installing : bridge-utils-1.5-9.el7.x86_64                              15/43 
+  Installing : netcf-libs-0.2.8-2.el7.x86_64                              16/43 
+  Installing : keyutils-1.5.8-3.el7.x86_64                                17/43 
+  Installing : cyrus-sasl-md5-2.1.26-20.el7_2.x86_64                      18/43 
+  Installing : tcp_wrappers-7.6-77.el7.x86_64                             19/43 
+  Installing : ldns-1.6.16-10.el7.x86_64                                  20/43 
+  Installing : unbound-libs-1.4.20-28.el7.x86_64                          21/43 
+  Installing : gnutls-dane-3.3.24-1.el7.x86_64                            22/43 
+  Installing : lzop-1.03-10.el7.x86_64                                    23/43 
+  Installing : 1:quota-nls-4.01-14.el7.noarch                             24/43 
+  Installing : 1:quota-4.01-14.el7.x86_64                                 25/43 
+  Installing : autogen-libopts-5.18-5.el7.x86_64                          26/43 
+  Installing : gnutls-utils-3.3.24-1.el7.x86_64                           27/43 
+  Installing : cyrus-sasl-2.1.26-20.el7_2.x86_64                          28/43 
+  Installing : libvirt-client-2.0.0-10.el7_3.9.x86_64                     29/43 
+  Installing : libvirt-daemon-2.0.0-10.el7_3.9.x86_64                     30/43 
+  Installing : libvirt-daemon-driver-network-2.0.0-10.el7_3.9.x86_64      31/43 
+  Installing : libvirt-daemon-driver-nwfilter-2.0.0-10.el7_3.9.x86_64     32/43 
+  Installing : libvirt-daemon-config-nwfilter-2.0.0-10.el7_3.9.x86_64     33/43 
+  Installing : libvirt-daemon-driver-lxc-2.0.0-10.el7_3.9.x86_64          34/43 
+  Installing : libvirt-daemon-config-network-2.0.0-10.el7_3.9.x86_64      35/43 
+  Installing : libvirt-daemon-driver-secret-2.0.0-10.el7_3.9.x86_64       36/43 
+  Installing : libvirt-daemon-driver-interface-2.0.0-10.el7_3.9.x86_64    37/43 
+  Installing : libvirt-daemon-driver-nodedev-2.0.0-10.el7_3.9.x86_64      38/43 
+  Installing : libnfsidmap-0.25-15.el7.x86_64                             39/43 
+  Installing : 1:nfs-utils-1.3.0-0.33.el7_3.x86_64                        40/43 
+  Installing : libvirt-daemon-driver-storage-2.0.0-10.el7_3.9.x86_64      41/43 
+  Installing : libvirt-daemon-driver-qemu-2.0.0-10.el7_3.9.x86_64         42/43 
+  Installing : libvirt-2.0.0-10.el7_3.9.x86_64                            43/43 
+  Verifying  : libtalloc-2.1.6-1.el7.x86_64                                1/43 
+  Verifying  : 1:quota-4.01-14.el7.x86_64                                  2/43 
+  Verifying  : libnfsidmap-0.25-15.el7.x86_64                              3/43 
+  Verifying  : libverto-tevent-0.2.5-4.el7.x86_64                          4/43 
+  Verifying  : libvirt-daemon-driver-lxc-2.0.0-10.el7_3.9.x86_64           5/43 
+  Verifying  : libini_config-1.3.0-27.el7.x86_64                           6/43 
+  Verifying  : cyrus-sasl-2.1.26-20.el7_2.x86_64                           7/43 
+  Verifying  : autogen-libopts-5.18-5.el7.x86_64                           8/43 
+  Verifying  : gnutls-utils-3.3.24-1.el7.x86_64                            9/43 
+  Verifying  : libvirt-2.0.0-10.el7_3.9.x86_64                            10/43 
+  Verifying  : gnutls-dane-3.3.24-1.el7.x86_64                            11/43 
+  Verifying  : libvirt-client-2.0.0-10.el7_3.9.x86_64                     12/43 
+  Verifying  : avahi-libs-0.6.31-17.el7.x86_64                            13/43 
+  Verifying  : 1:quota-nls-4.01-14.el7.noarch                             14/43 
+  Verifying  : lzop-1.03-10.el7.x86_64                                    15/43 
+  Verifying  : libvirt-daemon-driver-nwfilter-2.0.0-10.el7_3.9.x86_64     16/43 
+  Verifying  : ldns-1.6.16-10.el7.x86_64                                  17/43 
+  Verifying  : tcp_wrappers-7.6-77.el7.x86_64                             18/43 
+  Verifying  : libbasicobjects-0.1.1-27.el7.x86_64                        19/43 
+  Verifying  : libvirt-daemon-config-nwfilter-2.0.0-10.el7_3.9.x86_64     20/43 
+  Verifying  : libvirt-daemon-driver-secret-2.0.0-10.el7_3.9.x86_64       21/43 
+  Verifying  : cyrus-sasl-md5-2.1.26-20.el7_2.x86_64                      22/43 
+  Verifying  : libref_array-0.1.5-27.el7.x86_64                           23/43 
+  Verifying  : keyutils-1.5.8-3.el7.x86_64                                24/43 
+  Verifying  : gssproxy-0.4.1-13.el7.x86_64                               25/43 
+  Verifying  : libvirt-daemon-2.0.0-10.el7_3.9.x86_64                     26/43 
+  Verifying  : libvirt-daemon-driver-interface-2.0.0-10.el7_3.9.x86_64    27/43 
+  Verifying  : bridge-utils-1.5-9.el7.x86_64                              28/43 
+  Verifying  : libtevent-0.9.28-1.el7.x86_64                              29/43 
+  Verifying  : libvirt-daemon-driver-qemu-2.0.0-10.el7_3.9.x86_64         30/43 
+  Verifying  : unbound-libs-1.4.20-28.el7.x86_64                          31/43 
+  Verifying  : yajl-2.0.4-4.el7.x86_64                                    32/43 
+  Verifying  : numad-0.5-17.20150602git.el7.x86_64                        33/43 
+  Verifying  : libvirt-daemon-driver-nodedev-2.0.0-10.el7_3.9.x86_64      34/43 
+  Verifying  : libcollection-0.6.2-27.el7.x86_64                          35/43 
+  Verifying  : libvirt-daemon-driver-network-2.0.0-10.el7_3.9.x86_64      36/43 
+  Verifying  : libvirt-daemon-config-network-2.0.0-10.el7_3.9.x86_64      37/43 
+  Verifying  : 1:nfs-utils-1.3.0-0.33.el7_3.x86_64                        38/43 
+  Verifying  : libtirpc-0.2.4-0.8.el7_3.x86_64                            39/43 
+  Verifying  : libpath_utils-0.2.1-27.el7.x86_64                          40/43 
+  Verifying  : netcf-libs-0.2.8-2.el7.x86_64                              41/43 
+  Verifying  : rpcbind-0.2.0-38.el7_3.1.x86_64                            42/43 
+  Verifying  : libvirt-daemon-driver-storage-2.0.0-10.el7_3.9.x86_64      43/43 
+
+Installed:
+  libvirt.x86_64 0:2.0.0-10.el7_3.9                                             
+
+Dependency Installed:
+  autogen-libopts.x86_64 0:5.18-5.el7                                           
+  avahi-libs.x86_64 0:0.6.31-17.el7                                             
+  bridge-utils.x86_64 0:1.5-9.el7                                               
+  cyrus-sasl.x86_64 0:2.1.26-20.el7_2                                           
+  cyrus-sasl-md5.x86_64 0:2.1.26-20.el7_2                                       
+  gnutls-dane.x86_64 0:3.3.24-1.el7                                             
+  gnutls-utils.x86_64 0:3.3.24-1.el7                                            
+  gssproxy.x86_64 0:0.4.1-13.el7                                                
+  keyutils.x86_64 0:1.5.8-3.el7                                                 
+  ldns.x86_64 0:1.6.16-10.el7                                                   
+  libbasicobjects.x86_64 0:0.1.1-27.el7                                         
+  libcollection.x86_64 0:0.6.2-27.el7                                           
+  libini_config.x86_64 0:1.3.0-27.el7                                           
+  libnfsidmap.x86_64 0:0.25-15.el7                                              
+  libpath_utils.x86_64 0:0.2.1-27.el7                                           
+  libref_array.x86_64 0:0.1.5-27.el7                                            
+  libtalloc.x86_64 0:2.1.6-1.el7                                                
+  libtevent.x86_64 0:0.9.28-1.el7                                               
+  libtirpc.x86_64 0:0.2.4-0.8.el7_3                                             
+  libverto-tevent.x86_64 0:0.2.5-4.el7                                          
+  libvirt-client.x86_64 0:2.0.0-10.el7_3.9                                      
+  libvirt-daemon.x86_64 0:2.0.0-10.el7_3.9                                      
+  libvirt-daemon-config-network.x86_64 0:2.0.0-10.el7_3.9                       
+  libvirt-daemon-config-nwfilter.x86_64 0:2.0.0-10.el7_3.9                      
+  libvirt-daemon-driver-interface.x86_64 0:2.0.0-10.el7_3.9                     
+  libvirt-daemon-driver-lxc.x86_64 0:2.0.0-10.el7_3.9                           
+  libvirt-daemon-driver-network.x86_64 0:2.0.0-10.el7_3.9                       
+  libvirt-daemon-driver-nodedev.x86_64 0:2.0.0-10.el7_3.9                       
+  libvirt-daemon-driver-nwfilter.x86_64 0:2.0.0-10.el7_3.9                      
+  libvirt-daemon-driver-qemu.x86_64 0:2.0.0-10.el7_3.9                          
+  libvirt-daemon-driver-secret.x86_64 0:2.0.0-10.el7_3.9                        
+  libvirt-daemon-driver-storage.x86_64 0:2.0.0-10.el7_3.9                       
+  lzop.x86_64 0:1.03-10.el7                                                     
+  netcf-libs.x86_64 0:0.2.8-2.el7                                               
+  nfs-utils.x86_64 1:1.3.0-0.33.el7_3                                           
+  numad.x86_64 0:0.5-17.20150602git.el7                                         
+  quota.x86_64 1:4.01-14.el7                                                    
+  quota-nls.noarch 1:4.01-14.el7                                                
+  rpcbind.x86_64 0:0.2.0-38.el7_3.1                                             
+  tcp_wrappers.x86_64 0:7.6-77.el7                                              
+  unbound-libs.x86_64 0:1.4.20-28.el7                                           
+  yajl.x86_64 0:2.0.4-4.el7                                                     
+
+Complete!
+bash: line 1: html: No such file or directory
+bash: line 2: syntax error near unexpected token `<'
+bash: line 2: `<head><title>301 Moved Permanently</title></head>'
