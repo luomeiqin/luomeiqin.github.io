@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Blockchain transaction performance
-categories: [blockchain, p2p]
+categories: [ethereum,blockchain]
 description: some word here
 keywords: blockchain
 ---
