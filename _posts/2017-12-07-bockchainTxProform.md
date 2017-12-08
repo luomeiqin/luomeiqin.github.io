@@ -9,6 +9,7 @@ There are several key areas that will affect the performance of blockchain, incl
  ### Peer to Peer Network Commuication
 Normally, Peer to Peer network are mainly unstructed with no specific topology. If someone want to send a transaction to another person. The blockchain such as Bitcoin or Ethereum is peer to peer network. How will the transaction get to the rest of the blockchain community? Think of it like how gossip would spread. There are a bunch of people (nodes), and when one of them knows something, they tell it to the few others(8~128 nodes) that they are closed to (peer nodes). Then those people tell a few more people the message that was told to them, and then... Eventually everyone knows about the original information (transaction). 
 
+
 When we say peer to peer network communication of blockchain, we mean that all the nodes that connect with other peers. After peers exchange their information (validating all transactions in some rules), they store it. Eventually, all full nodes store the same data.
 In order to maximize the trading performance, we can specify the physical configuration of the node machine and the number of nodes, and try to connect with high-speed network.
 
